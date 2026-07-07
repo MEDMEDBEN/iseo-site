@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vitrine 3D — ISEO</title>
+<meta name="description" content="Découvrez nos produits de sécurité en 3D interactive." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="style.css" />
+<style>
+  #showcase { position: relative; height: 300vh; }
+  .showcase__stage { position: sticky; top: 0; height: 100vh; overflow: hidden; display: grid; place-items: center; }
+  #glb-canvas { width: 100%; height: 100%; display: block; }
+  .showcase__hud { position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; padding: 110px clamp(20px,5vw,64px) 60px; }
+  .showcase__hud h2 { font-size: clamp(2rem,5vw,4rem); max-width: 12ch; }
+  .showcase__hud p { color: var(--grey); max-width: 40ch; margin-top: 14px; }
+  .showcase__steps { display: flex; gap: 20px; flex-wrap: wrap; }
+  .showcase__steps div { background: rgba(251,250,248,.7); backdrop-filter: blur(10px); border: 1px solid var(--line); border-radius: 14px; padding: 12px 18px; font-size: .85rem; }
+  .showcase__steps b { color: var(--red); font-family: var(--font-display); }
+  #glb-fallback { display: none; position: absolute; inset: 0; place-items: center; text-align: center; padding: 40px; }
+  #glb-fallback .box { max-width: 520px; }
+  #glb-fallback img { border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 24px; }
+  .scrollcue { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--soft); }
+</style>
+</head>
+<body>
+<div class="cursor-dot"></div><div class="cursor-ring"></div>
+
+<header class="nav scrolled">
+  <a class="brand cursor-target" href="index.html"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z"/><path d="m9.5 12 1.8 1.8L15 10"/></svg></span>ISEO</a>
+  <nav class="nav-links">
+    <a href="index.html">Accueil</a><a href="produits.html">Produits</a>
+    <a href="showcase-3d.html">Vitrine 3D</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <span class="magnetic"><a class="btn btn-primary cursor-target" href="contact.html"><span>Devis</span></a></span>
+    <button class="burger cursor-target" aria-label="Menu"><svg viewBox="0 0 24 24" width="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<div class="drawer">
+  <a href="index.html">Accueil</a><a href="produits.html">Produits</a>
+  <a href="showcase-3d.html">Vitrine 3D</a><a href="contact.html">Contact</a>
+</div>
+
+<section id="showcase">
+  <div class="showcase__stage">
+    <canvas id="glb-canvas"></canvas>
+
+    <!-- Fallback si aucun modèle .glb n'est présent -->
+    <div id="glb-fallback">
+      <div class="box">
+        <img src="https://images.pexels.com/photos/3276079/pexels-photo-3276079.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Produit" onerror="imgFallback(this)">
+        <span class="kicker" style="justify-content:center;display:flex">Vitrine 3D</span>
+        <h2 class="title" style="margin:14px 0">Le modèle 3D<br>arrive bientôt.</h2>
+        <p class="lead">Déposez votre fichier <b>assets/models/product.glb</b> (exporté depuis Tripo3D ou Blender) et la scène 3D interactive s'activera automatiquement — rotation, vue éclatée et animation au scroll.</p>
+      </div>
+    </div>
+
+    <div class="showcase__hud">
+      <div>
+        <span class="kicker">Vitrine interactive</span>
+        <h2 class="title" style="margin-top:14px">Votre produit,<br>sous tous les angles.</h2>
+        <p>Faites défiler pour faire pivoter le modèle et révéler son mécanisme en vue éclatée.</p>
+      </div>
+      <div class="showcase__steps">
+        <div><b>01</b> &nbsp;Rotation continue</div>
+        <div><b>02</b> &nbsp;Réaction à la souris</div>
+        <div><b>03</b> &nbsp;Vue éclatée au scroll</div>
+      </div>
+    </div>
+    <div class="scrollcue">Défiler pour explorer ↓</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container"><div class="footer__bottom" style="border:0;padding-top:0">
+    <a class="brand" href="index.html"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z"/></svg></span>ISEO</a>
+    <span>© <span id="year"></span> ISEO. Tous droits réservés.</span>
+  </div></div>
+</footer>
+
+<!-- Three.js 0.128 + loaders (globaux, non-module) -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="products.js"></script>
+<script src="main.js"></script>
+<script src="model3d.js"></script>
+<script src="chat.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

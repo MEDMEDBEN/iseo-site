@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Produits — ISEO Sécurité</title>
+<meta name="description" content="Catalogue ISEO : cylindres & serrures, cadenas, coffres-forts, contrôle d'accès. Paiement à la livraison, installation certifiée." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="cursor-dot"></div><div class="cursor-ring"></div>
+
+<header class="nav scrolled">
+  <a class="brand cursor-target" href="index.html"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z"/><path d="m9.5 12 1.8 1.8L15 10"/></svg></span>ISEO</a>
+  <nav class="nav-links">
+    <a href="index.html">Accueil</a><a href="produits.html">Produits</a>
+    <a href="index.html#services">Services</a><a href="index.html#apropos">À propos</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="lang cursor-target" href="#">FR / ع</a>
+    <span class="magnetic"><a class="btn btn-primary cursor-target" href="contact.html"><span>Demander un devis</span></a></span>
+    <button class="burger cursor-target" aria-label="Menu"><svg viewBox="0 0 24 24" width="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<div class="drawer">
+  <a href="index.html">Accueil</a><a href="produits.html">Produits</a>
+  <a href="index.html#services">Services</a><a href="index.html#apropos">À propos</a><a href="contact.html">Contact</a>
+</div>
+
+<section style="padding:140px 0 40px">
+  <div class="container">
+    <span class="kicker reveal in">Catalogue</span>
+    <h1 class="display reveal in" style="font-size:clamp(2.4rem,6vw,4.6rem);margin:16px 0 18px">Nos produits<br>de sécurité.</h1>
+    <p class="lead reveal in">Chaque référence est testée par nos serruriers. Paiement à la livraison, 58 wilayas, installation possible par nos équipes certifiées.</p>
+  </div>
+</section>
+
+<section style="padding:20px 0 120px">
+  <div class="container">
+    <div class="filters" id="filters">
+      <button class="chip active cursor-target" data-f="all">Tous</button>
+      <button class="chip cursor-target" data-f="cyl">Cylindres &amp; serrures</button>
+      <button class="chip cursor-target" data-f="pad">Cadenas</button>
+      <button class="chip cursor-target" data-f="safe">Coffres-forts</button>
+      <button class="chip cursor-target" data-f="access">Contrôle d’accès</button>
+    </div>
+    <div class="prod-grid" id="prod-grid" data-stagger></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom" style="border:0;padding-top:0">
+      <a class="brand" href="index.html"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z"/></svg></span>ISEO</a>
+      <span>© <span id="year"></span> ISEO. Tous droits réservés.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="products.js"></script>
+<script src="main.js"></script>
+<script src="chat.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Filtering
+  const filters = document.getElementById('filters');
+  filters.addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    filters.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    b.classList.add('active');
+    const f = b.dataset.f;
+    document.querySelectorAll('#prod-grid .pcard').forEach(card => {
+      const show = f === 'all' || card.dataset.cat === f;
+      card.style.display = show ? '' : 'none';
+    });
+  });
+  // deep-link filter (#cyl etc.)
+  const hash = location.hash.replace('#','');
+  if (hash) { const b = filters.querySelector(`[data-f="${hash}"]`); if (b) b.click(); }
+</script>
+</body>
+</html>
