@@ -37,6 +37,26 @@
   .rev.in{opacity:1;transform:none}
   .rev.d1{transition-delay:.1s}.rev.d2{transition-delay:.2s}.rev.d3{transition-delay:.3s}
 
+  /* ---------- MORPH (key dissolves into its double, in place) ---------- */
+  .morph{position:relative;height:240vh}
+  .morph-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:flex-end}
+  .morph-layer{position:absolute;inset:-3%;z-index:0}
+  .morph-layer img{width:100%;height:100%;object-fit:cover}
+  .morph-before{z-index:1;will-change:opacity,filter,transform}
+  .morph-scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(8,9,10,.4) 0%,transparent 28%,rgba(8,9,10,.15) 55%,rgba(8,9,10,.85) 100%)}
+  .morph-inner{position:relative;z-index:3;padding:0 clamp(20px,6vw,110px) clamp(70px,12vh,120px);max-width:900px;width:100%}
+  .morph-cap{position:relative}
+  .morph-cap .cap{position:absolute;left:0;right:0;bottom:0;transition:opacity .1s linear}
+  .morph-cap .cap.b{position:relative}
+  .morph h2{color:#fff;font-size:clamp(2.6rem,7vw,5.6rem)}
+  .morph .kicker{color:var(--gold)}
+  .morph p{color:rgba(255,255,255,.85);margin-top:16px;font-size:clamp(1.05rem,1.6vw,1.35rem);max-width:46ch}
+  .morph .accent{color:var(--red)}
+  .morph-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:4;color:rgba(255,255,255,.75);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .morph-hint i{width:20px;height:32px;border:1px solid rgba(255,255,255,.5);border-radius:11px;position:relative}
+  .morph-hint i::after{content:"";position:absolute;top:6px;left:50%;width:3px;height:7px;background:var(--red);border-radius:2px;transform:translateX(-50%);animation:sc 1.6s var(--ease) infinite}
+  @keyframes sc{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}80%{opacity:0;transform:translate(-50%,9px)}}
+
   /* ---------- IMMERSIVE (full-bleed with blur/focus motion) ---------- */
   .immersive{position:relative;height:100vh;overflow:hidden;display:flex;align-items:flex-end}
   .imm-bg{position:absolute;inset:-4%;z-index:0;will-change:transform,filter}
@@ -101,25 +121,24 @@
   <a class="back" href="index.html">← Site principal</a>
 </header>
 
-<!-- 1 · IMMERSIVE : la clé -->
-<section class="immersive">
-  <div class="imm-bg"><img src="Gemini_Generated_Image_d69rh3d69rh3d69r.png" alt="Une clé en laiton"></div>
-  <div class="imm-inner">
-    <span class="kicker">ISEO · Oran · depuis 1996</span>
-    <h2>Tout commence<br>par une <span class="accent">clé.</span></h2>
-    <p>Trente ans à protéger ce qui compte : vos proches, vos biens, votre tranquillité.</p>
-  </div>
-</section>
-
-<!-- 2 · EDITORIAL : la clé et son double -->
-<section class="pad">
-  <div class="wrap split">
-    <div class="txt">
-      <span class="kicker rev">Reproduction de clés</span>
-      <h2 class="rev d1">Une clé. Son double.<br>Votre tranquillité.</h2>
-      <p class="lead rev d2">Reproduction de clés sécurisées sur présentation de la carte de propriété. Un double de confiance, taillé au détail près, dans le même métal, la même précision.</p>
-    </div>
-    <div class="frame figB rev d1"><img src="Gemini_Generated_Image_vxj38bvxj38bvxj3.png" alt="La clé et son double"></div>
+<!-- 1+2 · MORPH : la clé se dissout et son double apparaît (au scroll) -->
+<section class="morph" id="morph">
+  <div class="morph-sticky">
+    <div class="morph-layer morph-after"><img src="Gemini_Generated_Image_vxj38bvxj38bvxj3.png" alt="La clé et son double"></div>
+    <div class="morph-layer morph-before" id="morphBefore"><img src="Gemini_Generated_Image_d69rh3d69rh3d69r.png" alt="Une clé en laiton"></div>
+    <div class="morph-scrim"></div>
+    <div class="morph-inner"><div class="morph-cap">
+      <div class="cap a" id="capA">
+        <span class="kicker">ISEO · Oran · depuis 1996</span>
+        <h2>Tout commence<br>par une <span class="accent">clé.</span></h2>
+      </div>
+      <div class="cap b" id="capB" style="opacity:0">
+        <span class="kicker">Reproduction de clés</span>
+        <h2>Une clé,<br>et son <span class="accent">double.</span></h2>
+        <p>Un double de confiance, taillé au détail près — même métal, même précision.</p>
+      </div>
+    </div></div>
+    <div class="morph-hint"><i></i> Défiler</div>
   </div>
 </section>
 
@@ -195,10 +214,24 @@
 
   const progress=document.getElementById('progress');
   const imms=[...document.querySelectorAll('.immersive')];
+  const morph=document.getElementById('morph');
+  const morphBefore=document.getElementById('morphBefore');
+  const capA=document.getElementById('capA'), capB=document.getElementById('capB');
   function onScroll(){
     const y=window.scrollY, vh=window.innerHeight;
     const max=document.body.scrollHeight-vh;
     progress.style.width=(max>0?Math.min(100,y/max*100):0)+'%';
+    // MORPH : la cle se dissout, le double apparait a la meme place
+    if(morph){
+      const r=morph.getBoundingClientRect();
+      const p=Math.min(1,Math.max(0, -r.top/(morph.offsetHeight - vh)));
+      const t=Math.min(1,Math.max(0,(p-0.15)/0.55));
+      morphBefore.style.opacity=(1-t).toFixed(3);
+      morphBefore.style.filter='blur('+(t*(1-t)*10).toFixed(2)+'px)';
+      morphBefore.style.transform='scale('+(1+t*0.05).toFixed(3)+')';
+      if(capA) capA.style.opacity=(1-Math.min(1,t*1.4)).toFixed(3);
+      if(capB) capB.style.opacity=(Math.max(0,(t-0.25)/0.75)).toFixed(3);
+    }
     // Blur / focus-pull + parallax on immersive images
     imms.forEach(sec=>{
       const bg=sec.querySelector('.imm-bg'); if(!bg)return;
