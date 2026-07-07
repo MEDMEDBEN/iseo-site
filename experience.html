@@ -57,6 +57,18 @@
   .morph-hint i::after{content:"";position:absolute;top:6px;left:50%;width:3px;height:7px;background:var(--red);border-radius:2px;transform:translateX(-50%);animation:sc 1.6s var(--ease) infinite}
   @keyframes sc{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}80%{opacity:0;transform:translate(-50%,9px)}}
 
+  /* ---------- PORTAL (iris reveal : la porte s'ouvre depuis le centre) ---------- */
+  .portal{position:relative;height:220vh}
+  .portal-sticky{position:sticky;top:0;height:100vh;overflow:hidden;background:#0d0e10;display:flex;align-items:flex-end}
+  .portal-img{position:absolute;inset:0;z-index:0;will-change:clip-path,transform}
+  .portal-img img{width:100%;height:100%;object-fit:cover}
+  .portal-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,9,10,.35),transparent 30%,rgba(8,9,10,.15) 55%,rgba(8,9,10,.85) 100%);opacity:0;transition:opacity .3s}
+  .portal-inner{position:relative;z-index:2;padding:0 clamp(20px,6vw,110px) clamp(70px,12vh,120px);max-width:820px}
+  .portal h2{color:#fff;font-size:clamp(2.4rem,6vw,5rem)}
+  .portal .kicker{color:var(--gold)}
+  .portal p{color:rgba(255,255,255,.85);margin-top:16px;font-size:clamp(1.05rem,1.6vw,1.35rem);max-width:44ch}
+  .portal .accent{color:var(--red)}
+
   /* ---------- IMMERSIVE (full-bleed with blur/focus motion) ---------- */
   .immersive{position:relative;height:100vh;overflow:hidden;display:flex;align-items:flex-end}
   .imm-bg{position:absolute;inset:-4%;z-index:0;will-change:transform,filter}
@@ -142,13 +154,16 @@
   </div>
 </section>
 
-<!-- 3 · IMMERSIVE : la clé ouvre la porte / la maison -->
-<section class="immersive">
-  <div class="imm-bg"><img src="Gemini_Generated_Image_y8qrtry8qrtry8qr.png" alt="La clé dans le cylindre, la maison derrière"></div>
-  <div class="imm-inner">
-    <span class="kicker">Protection</span>
-    <h2>La clé qui ouvre<br>votre porte.</h2>
-    <p>Derrière chaque serrure, un foyer. Blindage, contrôle d'accès, interphonie — installés par des certifiés.</p>
+<!-- 3 · PORTAL : la porte s'ouvre (iris) sur le foyer -->
+<section class="portal" id="portal">
+  <div class="portal-sticky">
+    <div class="portal-img" id="portalImg"><img src="Gemini_Generated_Image_wy16xywy16xywy16.png" alt="La clé dans la serrure, la maison derrière"></div>
+    <div class="portal-scrim" id="portalScrim"></div>
+    <div class="portal-inner">
+      <span class="kicker">Protection</span>
+      <h2>La porte s'ouvre<br>sur votre <span class="accent">foyer.</span></h2>
+      <p>Derrière chaque serrure, un lieu à protéger. Blindage, contrôle d'accès, interphonie — installés par des certifiés.</p>
+    </div>
   </div>
 </section>
 
@@ -217,6 +232,7 @@
   const morph=document.getElementById('morph');
   const morphBefore=document.getElementById('morphBefore');
   const capA=document.getElementById('capA'), capB=document.getElementById('capB');
+  const portal=document.getElementById('portal'), portalImg=document.getElementById('portalImg'), portalScrim=document.getElementById('portalScrim');
   function onScroll(){
     const y=window.scrollY, vh=window.innerHeight;
     const max=document.body.scrollHeight-vh;
@@ -231,6 +247,15 @@
       morphBefore.style.transform='scale('+(1+t*0.05).toFixed(3)+')';
       if(capA) capA.style.opacity=(1-Math.min(1,t*1.4)).toFixed(3);
       if(capB) capB.style.opacity=(Math.max(0,(t-0.25)/0.75)).toFixed(3);
+    }
+    // PORTAL : ouverture en iris (clip-path circle qui grandit depuis le centre)
+    if(portal){
+      const r=portal.getBoundingClientRect();
+      const p=Math.min(1,Math.max(0, -r.top/(portal.offsetHeight - vh)));
+      const radius=(6 + p*162);
+      portalImg.style.clipPath='circle('+radius.toFixed(1)+'% at 50% 52%)';
+      portalImg.style.transform='scale('+(1.14 - p*0.14).toFixed(3)+')';
+      if(portalScrim) portalScrim.style.opacity=Math.min(1,p*1.7).toFixed(3);
     }
     // Blur / focus-pull + parallax on immersive images
     imms.forEach(sec=>{
