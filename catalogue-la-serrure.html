@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>La Serrure — Catalogue 2026 · Serrurerie · Quincaillerie · Sécurité · Oran</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --red:#B01722; --red-dark:#7C0E17; --graphite:#141317; --ink:#282730;
+    --grey:#6C6B74; --soft:#9C9BA4; --line:#E4DFD5; --line2:#D8D2C6;
+    --gold:#C29A4B; --gold-soft:#E7D9B6; --paper:#F6F3EC; --paper2:#FBF9F3;
+    --disp:'Bebas Neue',sans-serif; --serif:'Fraunces',Georgia,serif; --body:'Archivo',system-ui,sans-serif;
+    --shadow:0 20px 46px -20px rgba(20,18,16,.5);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--body);color:var(--ink);background:#33323a}
+  img{display:block;max-width:100%}
+  h1,h2,h3,h4{font-weight:400;line-height:.98}
+
+  /* ---- pages ---- */
+  .page{width:210mm;height:297mm;background:var(--paper);position:relative;overflow:hidden;
+    margin:9mm auto;box-shadow:0 12px 44px rgba(0,0,0,.45);page-break-after:always}
+  .page::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity:.03;mix-blend-mode:multiply}
+  @page{size:A4;margin:0}
+  @media print{body{background:#fff}.page{margin:0;box-shadow:none}}
+
+  /* ---- wordmark ---- */
+  .wm{display:inline-flex;align-items:center;gap:2.4mm;font-family:var(--disp);letter-spacing:.14em;color:var(--graphite)}
+  .wm .kh{width:1em;height:1em;display:inline-grid;place-items:center}
+  .wm .kh svg{width:.86em;height:.86em}
+  .wm b{color:var(--red);font-weight:400}
+
+  /* ---- running header / footer ---- */
+  .hd{position:absolute;top:12mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center;
+    padding-bottom:3mm;border-bottom:1px solid var(--line2);z-index:5}
+  .hd .wm{font-size:13pt}
+  .hd .tag{font-family:var(--body);font-weight:700;font-size:7.5pt;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+  .ft{position:absolute;bottom:11mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center;
+    padding-top:3mm;border-top:1px solid var(--line2);z-index:5;font-family:var(--body);font-size:7.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+  .ft .pg{font-family:var(--disp);font-size:14pt;letter-spacing:.1em;color:var(--graphite)}
+
+  .content{position:absolute;top:24mm;left:16mm;right:16mm;bottom:22mm}
+
+  .kicker{font-family:var(--body);font-weight:700;font-size:8.5pt;letter-spacing:.24em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:3mm}
+  .kicker::before{content:"";width:8mm;height:1.4px;background:var(--red)}
+  .title{font-family:var(--disp);font-size:40pt;color:var(--graphite);line-height:.9;margin-top:3mm;letter-spacing:.01em}
+  .title .red{color:var(--red)}
+  .subtitle{font-family:var(--serif);font-style:italic;font-size:13pt;color:var(--gold);margin-top:2mm}
+  .lead{font-size:10pt;color:var(--grey);line-height:1.62;max-width:150mm}
+
+  /* ---- image frame ---- */
+  .ph{position:relative;border-radius:3.5mm;overflow:hidden;box-shadow:var(--shadow)}
+  .ph img{width:100%;height:100%;object-fit:cover}
+  .ph::after{content:"";position:absolute;inset:0;border-radius:3.5mm;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.35), inset 0 0 0 2.6mm rgba(255,255,255,.06)}
+  .ph.gold::after{box-shadow:inset 0 0 0 1px rgba(194,154,75,.55)}
+
+  /* ================= COVER ================= */
+  .cover{background:var(--graphite)}
+  .cover .bg{position:absolute;inset:0}
+  .cover .bg img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(1.03)}
+  .cover .grade{position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,9,11,.62),rgba(10,9,11,.2) 26%,rgba(10,9,11,.28) 52%,rgba(10,9,11,.96) 100%)}
+  .cover .grade2{position:absolute;inset:0;mix-blend-mode:overlay;
+    background:linear-gradient(200deg,rgba(176,23,34,.35),transparent 45%,rgba(20,19,23,.5))}
+  .cover .top{position:absolute;top:15mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center}
+  .cover .top .est{font-family:var(--body);font-weight:700;font-size:8pt;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.9)}
+  .cover .badge{border:1.4px solid var(--gold);color:var(--gold);font-family:var(--disp);font-size:12pt;letter-spacing:.16em;padding:2.6mm 6mm;border-radius:2mm}
+  .cover .center{position:absolute;left:16mm;right:16mm;bottom:42mm;color:#fff}
+  .cover .la{font-family:var(--disp);font-size:22pt;letter-spacing:.42em;color:var(--gold);margin-bottom:-3mm;margin-left:1mm}
+  .cover .big{display:flex;align-items:center;gap:6mm}
+  .cover .big .kh{width:20mm;height:20mm;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;flex-shrink:0}
+  .cover .big .kh svg{width:11mm;height:11mm}
+  .cover .big h1{font-family:var(--disp);font-size:104pt;color:#fff;letter-spacing:.02em;line-height:.8}
+  .cover .rule{width:32mm;height:2.6px;background:var(--gold);margin:6mm 0 5mm}
+  .cover .claim{font-family:var(--serif);font-style:italic;font-size:15pt;max-width:135mm;color:rgba(255,255,255,.94)}
+  .cover .cat{font-family:var(--disp);font-size:20pt;letter-spacing:.4em;color:#fff;margin-top:8mm;opacity:.85}
+  .cover .bar{position:absolute;left:0;right:0;bottom:0;background:var(--red);color:#fff;
+    padding:5.5mm 16mm;display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--body);font-weight:600;font-size:9pt;letter-spacing:.02em}
+  .cover .bar span{display:inline-flex;align-items:center;gap:2.5mm}
+  .cover .bar svg{width:4mm;height:4mm;stroke:var(--gold)}
+
+  /* ================= ABOUT (flow layout) ================= */
+  .about .content{display:flex;flex-direction:column}
+  .about .head{margin-bottom:8mm}
+  .about .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:11mm;align-items:stretch}
+  .about .txt p{font-size:10pt;color:var(--ink);line-height:1.62;margin-bottom:3.5mm}
+  .about .badges{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:5mm}
+  .badge{border:1px solid var(--line);border-left:2.4mm solid var(--red);border-radius:2.5mm;padding:4.5mm;background:var(--paper2)}
+  .badge b{font-family:var(--disp);font-size:14pt;color:var(--graphite);letter-spacing:.05em}
+  .badge span{display:block;font-size:8.4pt;color:var(--grey);margin-top:1mm;line-height:1.4}
+  .about .fig{border-radius:3.5mm;min-height:118mm}
+  .about .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6mm;margin-top:10mm;padding-top:6mm;border-top:2px solid var(--graphite)}
+  .stat b{font-family:var(--disp);font-size:32pt;color:var(--graphite);display:block;line-height:.9}
+  .stat b i{color:var(--red);font-style:normal}
+  .stat span{font-size:8pt;color:var(--grey);text-transform:uppercase;letter-spacing:.12em}
+  .brand-strip{margin-top:9mm;padding-top:5mm;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:2.5mm 6mm;align-items:center}
+  .brand-strip b{font-family:var(--disp);font-size:13pt;letter-spacing:.08em;color:var(--soft)}
+
+  /* ================= TOC ================= */
+  .toc-list{margin-top:12mm}
+  .toc-row{display:flex;align-items:baseline;gap:5mm;padding:4.6mm 0;border-bottom:1px solid var(--line)}
+  .toc-row .n{font-family:var(--disp);font-size:16pt;color:var(--red);width:11mm}
+  .toc-row .t{font-family:var(--disp);font-size:18pt;color:var(--graphite);letter-spacing:.04em}
+  .toc-row .d{flex:1;border-bottom:1.4px dotted var(--line2);transform:translateY(-1.4mm)}
+  .toc-row .p{font-family:var(--disp);font-size:16pt;color:var(--graphite)}
+
+  /* ================= CATEGORY DIVIDER ================= */
+  .divider{position:absolute;top:0;left:0;right:0;height:150mm;overflow:hidden}
+  .divider img{width:100%;height:100%;object-fit:cover;filter:contrast(1.04)}
+  .divider .grade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,11,13,.5),rgba(12,11,13,.05) 34%,rgba(12,11,13,.2) 60%,rgba(12,11,13,.9) 100%)}
+  .divider .grade2{position:absolute;inset:0;mix-blend-mode:multiply;background:linear-gradient(210deg,rgba(176,23,34,.28),transparent 55%)}
+  .divider .watermark{position:absolute;top:8mm;right:12mm;font-family:var(--disp);font-size:130pt;line-height:.7;color:rgba(255,255,255,.14);letter-spacing:-.02em}
+  .divider .label{position:absolute;left:16mm;bottom:11mm;z-index:2;color:#fff}
+  .divider .label .k{font-family:var(--body);font-weight:700;font-size:8pt;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:2.5mm}
+  .divider .label .k::before{content:"";width:7mm;height:1.4px;background:var(--gold)}
+  .divider .label h2{font-family:var(--disp);font-size:40pt;margin-top:2mm;letter-spacing:.01em}
+  .cat-body{position:absolute;top:158mm;left:16mm;right:16mm;bottom:20mm}
+  .cat-body .intro{font-size:10pt;color:var(--grey);line-height:1.55;max-width:165mm}
+  .cat-body .intro b{color:var(--ink)}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:4.5mm;margin-top:6mm}
+  .card{border:1px solid var(--line);border-radius:3mm;padding:5mm 6mm 5mm 5mm;background:var(--paper2);position:relative;padding-left:12mm}
+  .card .ci{position:absolute;left:5mm;top:5.2mm;font-family:var(--disp);font-size:12pt;color:var(--gold);letter-spacing:.06em}
+  .card h4{font-family:var(--disp);font-size:15pt;color:var(--graphite);letter-spacing:.03em}
+  .card p{font-size:8.6pt;color:var(--grey);margin-top:1.4mm;line-height:1.45}
+  .card .price{display:none}
+  /* download button (screen only) */
+  .dl-btn{position:fixed;right:8mm;bottom:8mm;z-index:99;display:inline-flex;align-items:center;gap:2.5mm;
+    background:var(--red);color:#fff;border:none;font-family:var(--body);font-weight:700;font-size:10pt;letter-spacing:.02em;
+    padding:4mm 7mm;border-radius:100px;box-shadow:0 10px 28px rgba(0,0,0,.35);cursor:pointer}
+  .dl-btn svg{width:4.5mm;height:4.5mm;stroke:#fff}
+  @media print{.dl-btn{display:none}}
+  .tagrow{margin-top:5.5mm;display:flex;flex-wrap:wrap;gap:2.4mm}
+  .chip{font-size:7.6pt;font-weight:600;letter-spacing:.05em;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:100px;padding:1.6mm 4mm}
+
+  /* ================= EDITORIAL 2-IMAGE (poignées) ================= */
+  .edi{position:absolute;top:60mm;left:16mm;right:16mm;bottom:22mm;display:grid;grid-template-columns:1.28fr .72fr;grid-template-rows:1fr auto;gap:6mm}
+  .edi .a{grid-row:1/3;border-radius:3.5mm}
+  .edi .b{border-radius:3.5mm;min-height:78mm}
+  .edi .note{align-self:end;border:1px solid var(--line);border-radius:3mm;padding:5mm;background:var(--paper2)}
+  .edi .note h4{font-family:var(--disp);font-size:14pt;color:var(--graphite);letter-spacing:.03em;margin-bottom:1.5mm}
+  .edi .note p{font-size:8.6pt;color:var(--grey);line-height:1.45}
+  .edi .note .chips{margin-top:3.5mm;display:flex;flex-wrap:wrap;gap:2mm}
+
+  /* ================= SERVICES ================= */
+  .serv-grid{margin-top:12mm;display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+  .serv{border:1px solid var(--line);border-radius:3mm;padding:6mm;background:var(--paper2);display:flex;gap:5mm;align-items:flex-start}
+  .serv .ic{width:13mm;height:13mm;border-radius:2.5mm;background:var(--graphite);color:var(--gold);display:grid;place-items:center;flex-shrink:0}
+  .serv .ic svg{width:7mm;height:7mm;stroke:var(--gold)}
+  .serv h4{font-family:var(--disp);font-size:15pt;color:var(--graphite);letter-spacing:.03em}
+  .serv p{font-size:8.6pt;color:var(--grey);margin-top:1.4mm;line-height:1.45}
+
+  /* ================= BRANDS ================= */
+  .brand-wall{margin-top:12mm;display:grid;grid-template-columns:repeat(3,1fr);gap:5mm}
+  .brand-cell{border:1px solid var(--line);border-radius:3mm;height:27mm;display:grid;place-items:center;background:var(--paper2);position:relative}
+  .brand-cell::after{content:"";position:absolute;inset:2mm;border:1px solid var(--line);border-radius:2mm}
+  .brand-cell b{font-family:var(--disp);font-size:21pt;letter-spacing:.08em;color:var(--graphite);position:relative}
+
+  /* ================= BACK COVER ================= */
+  .back{background:var(--graphite);color:#fff}
+  .back::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(70% 55% at 50% -5%,rgba(194,154,75,.2),transparent 60%),radial-gradient(60% 50% at 15% 105%,rgba(176,23,34,.5),transparent 60%)}
+  .back .inner{position:absolute;inset:0;padding:22mm 16mm;display:flex;flex-direction:column;justify-content:center;z-index:2}
+  .back .la{font-family:var(--disp);font-size:18pt;letter-spacing:.42em;color:var(--gold);margin-bottom:-2mm}
+  .back h2{font-family:var(--disp);font-size:74pt;line-height:.86;color:#fff}
+  .back h2 b{color:var(--red);font-weight:400}
+  .back .rule{width:28mm;height:2.6px;background:var(--gold);margin:6mm 0}
+  .back .claim{font-family:var(--serif);font-style:italic;font-size:14pt;max-width:128mm;color:rgba(255,255,255,.9)}
+  .contact-list{margin-top:13mm;display:grid;gap:5.5mm;max-width:135mm}
+  .cl{display:flex;gap:5mm;align-items:center}
+  .cl .ic{width:12mm;height:12mm;border-radius:2.5mm;border:1.4px solid var(--gold);display:grid;place-items:center;flex-shrink:0}
+  .cl .ic svg{width:5.6mm;height:5.6mm;stroke:var(--gold)}
+  .cl span{display:block;font-size:8pt;color:var(--soft);text-transform:uppercase;letter-spacing:.14em}
+  .cl b{font-family:var(--disp);font-size:17pt;letter-spacing:.04em}
+  .back .thumb{position:absolute;top:22mm;right:16mm;width:44mm;height:56mm;border-radius:3mm;overflow:hidden;border:1px solid rgba(255,255,255,.15);z-index:2}
+  .back .thumb img{width:100%;height:100%;object-fit:cover;opacity:.9}
+  .back .end{position:absolute;left:16mm;bottom:13mm;font-size:8pt;color:var(--soft);letter-spacing:.08em;z-index:2}
+  .back .endr{position:absolute;right:16mm;bottom:12mm;font-family:var(--disp);font-size:13pt;letter-spacing:.24em;color:var(--gold);z-index:2}
+
+  /* keyhole glyph reusable */
+  .khsvg{fill:none;stroke:currentColor}
+</style>
+</head>
+<body>
+
+<!-- keyhole svg symbol -->
+<svg width="0" height="0" style="position:absolute"><symbol id="kh" viewBox="0 0 24 24"><circle cx="12" cy="9" r="4.4" fill="currentColor" stroke="none"/><path d="M9.6 12.5 8.4 20h7.2l-1.2-7.5Z" fill="currentColor" stroke="none"/></symbol></svg>
+
+<!-- ============ 1 · COUVERTURE ============ -->
+<section class="page cover">
+  <div class="bg"><img src="IMG_4817.jpg" alt="Boutique La Serrure"></div>
+  <div class="grade"></div><div class="grade2"></div>
+  <div class="top">
+    <div class="est">Serrurerie · Quincaillerie · Sécurité — Oran</div>
+    <div class="badge">Édition 2026</div>
+  </div>
+  <div class="center">
+    <div class="la">LA</div>
+    <div class="big">
+      <span class="kh" style="color:var(--gold)"><svg viewBox="0 0 24 24"><use href="#kh"/></svg></span>
+      <h1>SERRURE</h1>
+    </div>
+    <div class="rule"></div>
+    <div class="claim">La solution à tout problème de serrure et de sécurité — vente &amp; service après-vente multi-marque.</div>
+    <div class="cat">CATALOGUE</div>
+  </div>
+  <div class="bar">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Bd des Lions, face mosquée Hasnaoui — Oran</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h5l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v5a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2Z"/></svg>0541 79 36 34</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>serruredelion@gmail.com</span>
+  </div>
+</section>
+
+<!-- ============ 2 · À PROPOS ============ -->
+<section class="page about">
+  <div class="hd"><span class="wm"><span class="kh" style="color:var(--red)"><svg viewBox="0 0 24 24"><use href="#kh"/></svg></span>LA <b>SERRURE</b></span><span class="tag">À propos</span></div>
+  <div class="content">
+    <div class="head">
+      <div class="kicker">Qui sommes-nous</div>
+      <div class="title">Votre spécialiste serrure<br>&amp; <span class="red">sécurité</span>, à Oran.</div>
+    </div>
+    <div class="grid">
+      <div class="txt">
+        <p>Depuis notre boutique du <b>Boulevard des Lions</b>, face à la mosquée Hasnaoui, <b>La Serrure</b> équipe et sécurise habitations, commerces et entreprises d'Oran.</p>
+        <p>Serrures, cylindres, poignées, verrous, cadenas, interphonie vidéo, contrôle d'accès et reproduction de clés minute : une gamme complète, <b>multi-marque</b>, sélectionnée pour sa fiabilité — avec conseil, pose et service après-vente.</p>
+        <div class="badges">
+          <div class="badge"><b>MULTI-MARQUE</b><span>Les meilleures marques, un seul point de vente</span></div>
+          <div class="badge"><b>CLÉ MINUTE</b><span>Reproduction de clés sur place</span></div>
+          <div class="badge"><b>SAV &amp; GARANTIE</b><span>Service après-vente sur nos produits</span></div>
+          <div class="badge"><b>CONSEIL EXPERT</b><span>Le juste niveau de sécurité</span></div>
+        </div>
+      </div>
+      <div class="ph gold fig"><img src="IMG_4808.jpg" alt="Vitrine de la boutique"></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>2000<i>+</i></b><span>références</span></div>
+      <div class="stat"><b>20<i>+</i></b><span>marques</span></div>
+      <div class="stat"><b>7<i>j/7</i></b><span>à votre service</span></div>
+      <div class="stat"><b>SAV</b><span>multi-marque</span></div>
+    </div>
+    <div class="brand-strip">
+      <b>ISEO</b><b>RIFFA</b><b>SOFICLEF</b><b>ROBISAN</b><b>KALE</b><b>IZO</b><b>AHRAM</b><b>LINCE</b><b>SMTOP</b><b>CRAFTER</b><b>YALE</b><b>CISA</b>
+    </div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">02</span></div>
+</section>
+
+<!-- ============ 3 · SOMMAIRE ============ -->
+<section class="page">
+  <div class="hd"><span class="wm"><span class="kh" style="color:var(--red)"><svg viewBox="0 0 24 24"><use href="#kh"/></svg></span>LA <b>SERRURE</b></span><span class="tag">Sommaire</span></div>
+  <div class="content">
+    <div class="kicker">Sommaire</div>
+    <div class="title">Ce que vous<br>trouverez chez <span class="red">nous</span>.</div>
+    <div class="toc-list">
+      <div class="toc-row"><span class="n">01</span><span class="t">Serrures encastrables</span><span class="d"></span><span class="p">04</span></div>
+      <div class="toc-row"><span class="n">02</span><span class="t">Serrures électriques, gâches &amp; verrous</span><span class="d"></span><span class="p">05</span></div>
+      <div class="toc-row"><span class="n">03</span><span class="t">Cylindres, canons &amp; sécurité de porte</span><span class="d"></span><span class="p">06</span></div>
+      <div class="toc-row"><span class="n">04</span><span class="t">Poignées &amp; béquilles</span><span class="d"></span><span class="p">07</span></div>
+      <div class="toc-row"><span class="n">05</span><span class="t">Interphonie vidéo &amp; contrôle d'accès</span><span class="d"></span><span class="p">08</span></div>
+      <div class="toc-row"><span class="n">06</span><span class="t">Cadenas, ferme-portes &amp; accessoires</span><span class="d"></span><span class="p">09</span></div>
+      <div class="toc-row"><span class="n">07</span><span class="t">Reproduction de clés — Clé Minute</span><span class="d"></span><span class="p">10</span></div>
+      <div class="toc-row"><span class="n">08</span><span class="t">Nos services</span><span class="d"></span><span class="p">11</span></div>
+      <div class="toc-row"><span class="n">09</span><span class="t">Nos marques</span><span class="d"></span><span class="p">12</span></div>
+    </div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">03</span></div>
+</section>
+
+<!-- ============ 4 · SERRURES ENCASTRABLES ============ -->
+<section class="page">
+  <div class="divider">
+    <img src="IMG_4800.jpg" alt="Mur de serrures encastrables">
+    <div class="grade"></div><div class="grade2"></div>
+    <div class="watermark">01</div>
+    <div class="label"><div class="k">Catégorie 01</div><h2>SERRURES<br>ENCASTRABLES</h2></div>
+  </div>
+  <div class="cat-body">
+    <p class="intro">Un mur entier de serrures à larder pour portes intérieures et d'entrée : toutes dimensions, tous entraxes, à cylindre ou à gorge. Du modèle standard à la <b>serrure haute résistance</b>, plusieurs marques et budgets.</p>
+    <div class="cards">
+      <div class="card"><span class="ci">A</span><span class="price">dès 280 DA</span><h4>Serrure à larder</h4><p>Serrure encastrée standard, axe et entraxe au choix, pour portes intérieures.</p></div>
+      <div class="card"><span class="ci">B</span><span class="price">dès 950 DA</span><h4>Serrure à cylindre</h4><p>Fermeture par canon européen, compatible toutes portes d'entrée.</p></div>
+      <div class="card"><span class="ci">C</span><span class="price">sur devis</span><h4>Serrure 3 points</h4><p>Verrouillage multipoints pour une sécurité renforcée de la porte d'entrée.</p></div>
+      <div class="card"><span class="ci">D</span><span class="price">jusqu'à 8 300 DA</span><h4>Serrure haute sécurité</h4><p>Modèles renforcés anti-effraction, pênes acier, marques premium.</p></div>
+    </div>
+    <div class="tagrow"><span class="chip">À cylindre</span><span class="chip">À gorge</span><span class="chip">Multipoints</span><span class="chip">Droite / Gauche</span><span class="chip">Toutes dimensions</span></div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">04</span></div>
+</section>
+
+<!-- ============ 5 · SERRURES ÉLECTRIQUES ============ -->
+<section class="page">
+  <div class="divider">
+    <img src="IMG_4790.jpg" alt="Serrures électriques et verrous">
+    <div class="grade"></div><div class="grade2"></div>
+    <div class="watermark">02</div>
+    <div class="label"><div class="k">Catégorie 02</div><h2>SERRURES ÉLECTRIQUES<br>GÂCHES &amp; VERROUS</h2></div>
+  </div>
+  <div class="cat-body">
+    <p class="intro">Ouverture à distance et sûreté renforcée : serrures et gâches électriques 12V, verrous à bouton et de sûreté. Idéal <b>portails, halls d'immeuble, commerces</b> et interphonie.</p>
+    <div class="cards">
+      <div class="card"><span class="ci">A</span><span class="price">dès 7 750 DA</span><h4>Serrure électrique 12V</h4><p>SOFICLEF · ROBISAN · KALE · ISEO — ouverture par bouton ou interphone.</p></div>
+      <div class="card"><span class="ci">B</span><span class="price">sur devis</span><h4>Gâche électrique</h4><p>Gâche à ouverture électrique, compatible interphonie vidéo.</p></div>
+      <div class="card"><span class="ci">C</span><span class="price">1 350 – 2 850 DA</span><h4>Verrou de sûreté à bouton</h4><p>IZO · AHRAM — verrou d'appoint robuste, pose simple.</p></div>
+      <div class="card"><span class="ci">D</span><span class="price">dès 1 550 DA</span><h4>Verrou à tirette</h4><p>Complément de fermeture pour portes et portails.</p></div>
+    </div>
+    <div class="tagrow"><span class="chip">12V</span><span class="chip">Ouverture à distance</span><span class="chip">Portail &amp; hall</span><span class="chip">Compatible interphone</span></div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">05</span></div>
+</section>
+
+<!-- ============ 6 · CYLINDRES / CANONS ============ -->
+<section class="page">
+  <div class="divider">
+    <img src="20241117_111507.jpg" alt="Serrures en applique et gâches">
+    <div class="grade"></div><div class="grade2"></div>
+    <div class="watermark">03</div>
+    <div class="label"><div class="k">Catégorie 03</div><h2>CYLINDRES, CANONS<br>&amp; SÉCURITÉ DE PORTE</h2></div>
+  </div>
+  <div class="cat-body">
+    <p class="intro">Le cœur de la sécurité : cylindres et canons européens <b>toutes longueurs</b>, du standard à l'anti-crochetage, plus les serrures en applique et gâches de sûreté.</p>
+    <div class="cards">
+      <div class="card"><span class="ci">A</span><span class="price">selon modèle</span><h4>Canon européen</h4><p>Toutes longueurs (60 à 100 mm et +), simple ou double entrée, 3 clés.</p></div>
+      <div class="card"><span class="ci">B</span><span class="price">haute sécurité</span><h4>Cylindre anti-crochetage</h4><p>Protection anti-perçage / anti-bumping, carte de propriété.</p></div>
+      <div class="card"><span class="ci">C</span><span class="price">dès 1 280 DA</span><h4>Serrure en applique</h4><p>Serrure de sûreté à poser, en complément de la serrure principale.</p></div>
+      <div class="card"><span class="ci">D</span><span class="price">sur devis</span><h4>Verrou de sûreté</h4><p>Renfort de fermeture pour portes d'entrée et locaux.</p></div>
+    </div>
+    <div class="tagrow"><span class="chip">60–100 mm</span><span class="chip">Simple / double</span><span class="chip">Anti-crochetage</span><span class="chip">ISEO · SMTOP</span><span class="chip">Reproduction contrôlée</span></div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">06</span></div>
+</section>
+
+<!-- ============ 7 · POIGNÉES (éditorial 2 images) ============ -->
+<section class="page">
+  <div class="hd"><span class="wm"><span class="kh" style="color:var(--red)"><svg viewBox="0 0 24 24"><use href="#kh"/></svg></span>LA <b>SERRURE</b></span><span class="tag">Catégorie 04</span></div>
+  <div class="content" style="bottom:auto;height:26mm">
+    <div class="kicker">Catégorie 04</div>
+    <div class="title">Poignées &amp; <span class="red">béquilles</span></div>
+  </div>
+  <div class="edi">
+    <div class="ph gold a"><img src="20241117_111845.jpg" alt="Vitrine de poignées or et chrome"></div>
+    <div class="ph b"><img src="20241117_111401.jpg" alt="Béquilles noir mat et accessoires"></div>
+    <div class="note">
+      <h4>Des centaines de modèles</h4>
+      <p>Béquilles sur plaque, poignées de tirage et rosaces — finitions or, chrome, inox et noir mat. Du classique à l'épuré, pour toutes les portes.</p>
+      <div class="chips"><span class="chip">Or</span><span class="chip">Chrome</span><span class="chip">Inox</span><span class="chip">Noir mat</span></div>
+    </div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">07</span></div>
+</section>
+
+<!-- ============ 8 · INTERPHONIE ============ -->
+<section class="page">
+  <div class="divider">
+    <img src="IMG_4787.jpg" alt="Interphones vidéo RIFFA">
+    <div class="grade"></div><div class="grade2"></div>
+    <div class="watermark">05</div>
+    <div class="label"><div class="k">Catégorie 05</div><h2>INTERPHONIE VIDÉO<br>&amp; CONTRÔLE D'ACCÈS</h2></div>
+  </div>
+  <div class="cat-body">
+    <p class="intro">Voir et contrôler qui entre : interphones vidéo <b>RIFFA</b> (moniteurs couleur, vision nocturne, platines de rue), serrures connectées et lecteurs de badge — du logement à l'immeuble.</p>
+    <div class="cards">
+      <div class="card"><span class="ci">A</span><span class="price">29 300 – 51 500 DA</span><h4>Kit interphone vidéo</h4><p>Moniteur couleur + platine de rue, ouverture de gâche, RIFFA.</p></div>
+      <div class="card"><span class="ci">B</span><span class="price">11 500 – 20 500 DA</span><h4>Platine de rue vidéo</h4><p>Caméra + appel, boîtier robuste extérieur, badge RFID en option.</p></div>
+      <div class="card"><span class="ci">C</span><span class="price">27 400 – 67 500 DA</span><h4>Moniteurs additionnels</h4><p>Écrans supplémentaires, mémoire d'images, mains-libres.</p></div>
+      <div class="card"><span class="ci">D</span><span class="price">sur devis</span><h4>Serrure connectée &amp; badge</h4><p>Code, empreinte, badge — contrôle d'accès moderne (ROBISAN).</p></div>
+    </div>
+    <div class="tagrow"><span class="chip">RIFFA</span><span class="chip">Vision nocturne</span><span class="chip">Badge RFID</span><span class="chip">Gâche électrique</span><span class="chip">Immeuble &amp; villa</span></div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">08</span></div>
+</section>
+
+<!-- ============ 9 · CADENAS / FERME-PORTES ============ -->
+<section class="page">
+  <div class="divider">
+    <img src="IMG_4820.jpg" alt="Ferme-portes hydrauliques">
+    <div class="grade"></div><div class="grade2"></div>
+    <div class="watermark">06</div>
+    <div class="label"><div class="k">Catégorie 06</div><h2>CADENAS, FERME-PORTES<br>&amp; ACCESSOIRES</h2></div>
+  </div>
+  <div class="cat-body">
+    <p class="intro">Tout ce qui complète la fermeture : cadenas blindés et laiton, <b>ferme-portes hydrauliques</b>, charnières, targettes, gonds et petite quincaillerie de bâtiment.</p>
+    <div class="cards">
+      <div class="card"><span class="ci">A</span><span class="price">selon taille</span><h4>Cadenas blindé &amp; laiton</h4><p>Anse protégée, corps acier ou laiton massif, 3 clés — portails &amp; dépôts.</p></div>
+      <div class="card"><span class="ci">B</span><span class="price">sur devis</span><h4>Ferme-porte hydraulique</h4><p>Fermeture douce et réglable, usage résidentiel et commercial.</p></div>
+      <div class="card"><span class="ci">C</span><span class="price">dès 350 DA</span><h4>Charnières &amp; gonds</h4><p>Toutes dimensions, acier / inox / laiton, pour portes et fenêtres.</p></div>
+      <div class="card"><span class="ci">D</span><span class="price">quincaillerie</span><h4>Targettes &amp; accessoires</h4><p>Verrous de meuble, entrées de clé, butées, petite quincaillerie.</p></div>
+    </div>
+    <div class="tagrow"><span class="chip">Cadenas</span><span class="chip">Ferme-portes</span><span class="chip">Charnières</span><span class="chip">Targettes</span><span class="chip">Quincaillerie</span></div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">09</span></div>
+</section>
+
+<!-- ============ 10 · CLÉ MINUTE ============ -->
+<section class="page">
+  <div class="divider">
+    <img src="IMG-20241015-WA0029.jpg" alt="Mur de clés — reproduction">
+    <div class="grade"></div><div class="grade2"></div>
+    <div class="watermark">07</div>
+    <div class="label"><div class="k">Service phare 07</div><h2>REPRODUCTION DE CLÉS<br>CLÉ MINUTE</h2></div>
+  </div>
+  <div class="cat-body">
+    <p class="intro">Un double de clé pendant que vous attendez. Nous reproduisons vos clés plates, à gorge, à points et spéciales — sur des <b>centaines de profils en stock</b>, avec précision.</p>
+    <div class="cards">
+      <div class="card"><span class="ci">A</span><span class="price">express</span><h4>Clé plate &amp; à gorge</h4><p>Reproduction immédiate sur machine, tous profils courants.</p></div>
+      <div class="card"><span class="ci">B</span><span class="price">contrôlée</span><h4>Clé sécurisée / brevetée</h4><p>Double sur présentation de la carte de propriété (ISEO &amp; autres).</p></div>
+      <div class="card"><span class="ci">C</span><span class="price">au choix</span><h4>Clés couleur &amp; capuchons</h4><p>Repérez vos clés d'un coup d'œil — large choix de coloris.</p></div>
+      <div class="card"><span class="ci">D</span><span class="price">sur mesure</span><h4>Clés spéciales</h4><p>Profils spécifiques et clés difficiles — demandez en boutique.</p></div>
+    </div>
+    <div class="tagrow"><span class="chip">Immédiat</span><span class="chip">Centaines de profils</span><span class="chip">Précision machine</span><span class="chip">ISEO Clé Minute</span></div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">10</span></div>
+</section>
+
+<!-- ============ 11 · SERVICES ============ -->
+<section class="page">
+  <div class="hd"><span class="wm"><span class="kh" style="color:var(--red)"><svg viewBox="0 0 24 24"><use href="#kh"/></svg></span>LA <b>SERRURE</b></span><span class="tag">Nos services</span></div>
+  <div class="content">
+    <div class="kicker">Nos services</div>
+    <div class="title">Bien plus qu'un<br><span class="red">magasin</span>.</div>
+    <div class="serv-grid">
+      <div class="serv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2 2.5-2.5Z"/></svg></div><div><h4>Installation &amp; pose</h4><p>Serrures, cylindres, verrous, interphonie et contrôle d'accès — posés dans les règles.</p></div></div>
+      <div class="serv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div><div><h4>Ouverture &amp; dépannage</h4><p>Porte claquée ou serrure bloquée ? Intervention rapide, sans dégâts inutiles.</p></div></div>
+      <div class="serv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><path d="m11 11 9 9"/><path d="m16 16 2-2"/></svg></div><div><h4>Reproduction de clés</h4><p>Clé minute sur place — clés plates, à gorge, à points et sécurisées.</p></div></div>
+      <div class="serv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z"/><path d="m9.5 12 1.8 1.8L15 10"/></svg></div><div><h4>Mise en sécurité</h4><p>Diagnostic et renforcement après effraction, remplacement des points de fermeture.</p></div></div>
+      <div class="serv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2" y="13" width="4" height="7" rx="1.5"/><rect x="18" y="13" width="4" height="7" rx="1.5"/></svg></div><div><h4>SAV multi-marque</h4><p>Service après-vente et pièces pour la plupart des grandes marques.</p></div></div>
+      <div class="serv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/></svg></div><div><h4>Conseil expert</h4><p>On vous oriente vers le juste niveau de sécurité, selon votre porte et votre budget.</p></div></div>
+    </div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">11</span></div>
+</section>
+
+<!-- ============ 12 · MARQUES ============ -->
+<section class="page">
+  <div class="hd"><span class="wm"><span class="kh" style="color:var(--red)"><svg viewBox="0 0 24 24"><use href="#kh"/></svg></span>LA <b>SERRURE</b></span><span class="tag">Nos marques</span></div>
+  <div class="content">
+    <div class="kicker">Nos marques</div>
+    <div class="title">Les meilleures marques,<br>un seul <span class="red">point de vente</span>.</div>
+    <div class="brand-wall">
+      <div class="brand-cell"><b>ISEO</b></div>
+      <div class="brand-cell"><b>RIFFA</b></div>
+      <div class="brand-cell"><b>SOFICLEF</b></div>
+      <div class="brand-cell"><b>ROBISAN</b></div>
+      <div class="brand-cell"><b>KALE</b></div>
+      <div class="brand-cell"><b>IZO</b></div>
+      <div class="brand-cell"><b>AHRAM</b></div>
+      <div class="brand-cell"><b>LINCE</b></div>
+      <div class="brand-cell"><b>SMTOP</b></div>
+      <div class="brand-cell"><b>CRAFTER</b></div>
+      <div class="brand-cell"><b>YALE</b></div>
+      <div class="brand-cell"><b>CISA</b></div>
+    </div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">12</span></div>
+</section>
+
+<!-- ============ 13 · DOS DE COUVERTURE ============ -->
+<section class="page back">
+  <div class="inner">
+    <div class="la">LA</div>
+    <h2>SER<b>RURE</b></h2>
+    <div class="rule"></div>
+    <div class="claim">La solution à tout problème de serrure et de sécurité. Passez en boutique — on s'occupe du reste.</div>
+    <div class="contact-list">
+      <div class="cl"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><span>Adresse</span><b>Boulevard des Lions, face mosquée Hasnaoui — Oran</b></div></div>
+      <div class="cl"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h5l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v5a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2Z"/></svg></div><div><span>Téléphone</span><b>0541 79 36 34</b></div></div>
+      <div class="cl"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><span>E-mail</span><b>serruredelion@gmail.com</b></div></div>
+    </div>
+  </div>
+  <div class="thumb"><img src="IMG_4817.jpg" alt="Boutique La Serrure"></div>
+  <div class="end">© 2026 La Serrure · Serrurerie · Quincaillerie · Sécurité · Oran</div>
+  <div class="endr">MERCI</div>
+</section>
+
+<button class="dl-btn" onclick="window.print()">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v3h16v-3"/></svg>
+  Télécharger en PDF
+</button>
+
+</body>
+</html>
