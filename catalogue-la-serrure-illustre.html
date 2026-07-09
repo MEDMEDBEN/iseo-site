@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>La Serrure — Catalogue illustré · Serrurerie · Quincaillerie · Sécurité · Oran</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --red:#B01722; --red-dark:#7C0E17; --graphite:#151319; --ink:#282730;
+    --grey:#6C6B74; --soft:#A6A4AD; --line:#E4DDD0; --gold:#C29A4B; --gold2:#E7D6AE;
+    --paper:#F5F1E8; --paper2:#FBF8F1; --cream:#EFE9DB;
+    --disp:'Bebas Neue',sans-serif; --serif:'Fraunces',Georgia,serif; --body:'Archivo',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--body);color:var(--ink);background:#33323a}
+  img{display:block;max-width:100%}
+  .page{width:210mm;height:297mm;background:var(--paper);position:relative;overflow:hidden;
+    margin:9mm auto;box-shadow:0 12px 44px rgba(0,0,0,.45);page-break-after:always}
+  @page{size:A4;margin:0}
+  @media print{body{background:#fff}.page{margin:0;box-shadow:none}.dl-btn{display:none}}
+
+  /* drawing helpers */
+  .ill{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  svg{color:var(--graphite)}
+  .wm svg{color:var(--red)}
+  .cover .bar svg{color:#fff}
+  .srow .b svg{color:var(--gold)}
+  .cl .b svg{color:var(--gold)}
+  .cover .draw svg{color:var(--graphite);opacity:.08}
+
+  .kicker{font-family:var(--body);font-weight:800;font-size:8.5pt;letter-spacing:.26em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:3mm}
+  .kicker::before{content:"";width:9mm;height:1.6px;background:var(--red)}
+  .h-title{font-family:var(--disp);font-size:40pt;color:var(--graphite);line-height:.9;letter-spacing:.01em;margin-top:3mm}
+  .h-title .red{color:var(--red)}
+  .serif{font-family:var(--serif);font-style:italic;color:var(--gold)}
+
+  .wm{font-family:var(--disp);letter-spacing:.14em;color:var(--graphite);display:inline-flex;align-items:center;gap:2.4mm}
+  .wm b{color:var(--red);font-weight:400}
+  .wm svg{width:1em;height:1em}
+
+  .ft{position:absolute;bottom:11mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center;
+    padding-top:3mm;border-top:1px solid var(--line);font-size:7.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+  .ft .pg{font-family:var(--disp);font-size:13pt;color:var(--graphite);letter-spacing:.1em}
+
+  /* photo shapes with gold ring */
+  .frameShape{position:relative}
+  .frameShape img{width:100%;height:100%;object-fit:cover}
+  .frameShape .ring{position:absolute;inset:-2.4mm;pointer-events:none}
+  .s-circle,.s-circle img{border-radius:50%}
+  .s-hex{clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%)}
+  .s-arch{border-radius:44% 44% 5mm 5mm/34% 34% 5mm 5mm;overflow:hidden}
+  .s-diag{clip-path:polygon(0 0,100% 0,100% 84%,0 100%)}
+  .s-blob{border-radius:46% 54% 55% 45%/52% 44% 56% 48%;overflow:hidden}
+  .s-rect{border-radius:3mm;overflow:hidden;box-shadow:0 16px 34px -16px rgba(20,18,16,.45)}
+  .s-round-shadow{box-shadow:0 16px 34px -16px rgba(20,18,16,.5)}
+
+  /* ============ COVER ============ */
+  .cover{background:var(--cream)}
+  .cover .pat{position:absolute;inset:0;opacity:.06}
+  .cover .top{position:absolute;top:15mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center}
+  .cover .top .e{font-family:var(--body);font-weight:800;font-size:7.6pt;letter-spacing:.24em;text-transform:uppercase;color:var(--graphite)}
+  .cover .badge{border:1.4px solid var(--red);color:var(--red);font-family:var(--disp);font-size:11pt;letter-spacing:.16em;padding:2.4mm 5.5mm;border-radius:2mm}
+  .cover .hero{position:absolute;top:44mm;left:16mm;width:120mm}
+  .cover .la{font-family:var(--disp);font-size:20pt;letter-spacing:.42em;color:var(--gold);margin-left:1mm}
+  .cover .mk{font-family:var(--disp);font-size:74pt;line-height:.82;color:var(--graphite);letter-spacing:.02em}
+  .cover .mk b{color:var(--red);font-weight:400}
+  .cover .rule{width:30mm;height:2.4px;background:var(--gold);margin:5mm 0}
+  .cover .claim{font-family:var(--serif);font-style:italic;font-size:14pt;color:var(--ink);max-width:98mm;line-height:1.4}
+  .cover .draw{position:absolute;top:40mm;right:8mm;width:88mm;height:88mm}
+  .cover .photo{position:absolute;right:20mm;bottom:34mm;width:74mm;height:90mm}
+  .cover .photo .cap{position:absolute;left:-6mm;bottom:10mm;background:var(--red);color:#fff;font-family:var(--disp);font-size:13pt;letter-spacing:.12em;padding:2.4mm 6mm;border-radius:1.5mm}
+  .cover .bar{position:absolute;left:0;right:0;bottom:0;background:var(--graphite);color:#fff;
+    padding:5mm 16mm;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:8.6pt}
+  .cover .bar span{display:inline-flex;align-items:center;gap:2.4mm}
+  .cover .bar svg{width:4.4mm;height:4.4mm}
+
+  /* ============ CONTENT PAGES ============ */
+  .content{position:absolute;top:18mm;left:16mm;right:16mm;bottom:20mm}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8mm}
+  .head .wm{font-size:12pt}
+
+  /* illustrated tiles */
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+  .tile{border:1px solid var(--line);border-radius:3.5mm;background:var(--paper2);padding:6mm 6mm 6mm 6mm;display:flex;gap:5mm;align-items:flex-start;position:relative;overflow:hidden}
+  .tile .dr{width:20mm;height:20mm;flex-shrink:0;background:var(--cream);border-radius:3mm;display:grid;place-items:center}
+  .tile .dr svg{width:13mm;height:13mm}
+  .tile h4{font-family:var(--disp);font-size:16pt;color:var(--graphite);letter-spacing:.03em}
+  .tile p{font-size:8.6pt;color:var(--grey);line-height:1.45;margin-top:1.4mm}
+  .tile .idx{position:absolute;right:5mm;top:4mm;font-family:var(--disp);font-size:12pt;color:var(--gold2)}
+  .chips{margin-top:2.5mm;display:flex;flex-wrap:wrap;gap:1.6mm}
+  .chip{font-size:7pt;font-weight:700;letter-spacing:.04em;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:100px;padding:1.2mm 3mm}
+
+  .lead{font-size:9.6pt;color:var(--grey);line-height:1.55;max-width:150mm}
+  .lead b{color:var(--ink)}
+
+  /* strip of small drawings */
+  .iconstrip{display:flex;gap:5mm;flex-wrap:wrap;margin-top:6mm}
+  .ic-mini{display:flex;flex-direction:column;align-items:center;gap:2mm;width:24mm}
+  .ic-mini .b{width:16mm;height:16mm;border:1.4px solid var(--line);border-radius:50%;display:grid;place-items:center;background:var(--paper2)}
+  .ic-mini .b svg{width:9mm;height:9mm}
+  .ic-mini span{font-size:7.4pt;font-weight:700;letter-spacing:.04em;color:var(--ink);text-align:center;text-transform:uppercase}
+
+  /* service rows */
+  .serv{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:6mm}
+  .srow{display:flex;gap:4.5mm;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:4.5mm}
+  .srow .b{width:15mm;height:15mm;flex-shrink:0;border-radius:3mm;background:var(--graphite);display:grid;place-items:center}
+  .srow .b svg{width:9mm;height:9mm}
+  .srow h4{font-family:var(--disp);font-size:15pt;color:var(--graphite);letter-spacing:.03em}
+  .srow p{font-size:8.4pt;color:var(--grey);line-height:1.4;margin-top:1mm}
+
+  /* brands */
+  .brands{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:6mm}
+  .bcell{border:1px solid var(--line);border-radius:2.5mm;height:20mm;display:grid;place-items:center;background:var(--paper2)}
+  .bcell b{font-family:var(--disp);font-size:16pt;letter-spacing:.06em;color:var(--graphite)}
+
+  /* contact block */
+  .contact{margin-top:8mm;background:var(--graphite);color:#fff;border-radius:4mm;padding:9mm 10mm;position:relative;overflow:hidden}
+  .contact::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 100% 0,rgba(194,154,75,.22),transparent 55%),radial-gradient(60% 90% at 0 100%,rgba(176,23,34,.4),transparent 55%)}
+  .contact>*{position:relative}
+  .contact .t{font-family:var(--disp);font-size:26pt;letter-spacing:.03em}
+  .contact .t b{color:var(--red);font-weight:400}
+  .clist{margin-top:6mm;display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+  .cl{display:flex;gap:3.5mm;align-items:center}
+  .cl .b{width:11mm;height:11mm;border:1.3px solid var(--gold);border-radius:2.5mm;display:grid;place-items:center;flex-shrink:0}
+  .cl .b svg{width:5.4mm;height:5.4mm}
+  .cl span{display:block;font-size:7.4pt;color:var(--gold2);text-transform:uppercase;letter-spacing:.14em}
+  .cl b2,.cl .v{font-family:var(--disp);font-size:14pt;letter-spacing:.03em;color:#fff}
+
+  .dl-btn{position:fixed;right:8mm;bottom:8mm;z-index:99;display:inline-flex;align-items:center;gap:2.5mm;background:var(--red);color:#fff;border:none;font-family:var(--body);font-weight:700;font-size:10pt;padding:4mm 7mm;border-radius:100px;box-shadow:0 10px 28px rgba(0,0,0,.35);cursor:pointer}
+  .dl-btn svg{width:4.4mm;height:4.4mm;fill:none;stroke:#fff;stroke-width:1.8}
+</style>
+</head>
+<body>
+
+<!-- ===== SVG library (dessins vectoriels) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="key" viewBox="0 0 48 48"><circle class="ill" cx="14" cy="24" r="7"/><circle class="ill" cx="14" cy="24" r="2.4"/><path class="ill" d="M21 24h20"/><path class="ill" d="M35 24v6M39 24v4"/></symbol>
+  <symbol id="cyl" viewBox="0 0 48 48"><rect class="ill" x="6" y="17" width="30" height="12" rx="6"/><circle class="ill" cx="12" cy="23" r="2.2"/><path class="ill" d="M12 23h4"/><path class="ill" d="M22 29v5M22 34h6l-1-5"/></symbol>
+  <symbol id="handle" viewBox="0 0 48 48"><rect class="ill" x="17" y="7" width="14" height="34" rx="4"/><circle class="ill" cx="24" cy="14" r="1.6"/><path class="ill" d="M24 26c7 0 11 3 14 2"/></symbol>
+  <symbol id="lock" viewBox="0 0 48 48"><rect class="ill" x="11" y="21" width="26" height="19" rx="3"/><path class="ill" d="M16 21v-4a8 8 0 0 1 16 0v4"/><circle class="ill" cx="24" cy="29" r="2.4"/><path class="ill" d="M24 31v4"/></symbol>
+  <symbol id="bolt2" viewBox="0 0 48 48"><rect class="ill" x="7" y="18" width="19" height="12" rx="2"/><path class="ill" d="M26 24h13"/><circle class="ill" cx="14" cy="24" r="3"/></symbol>
+  <symbol id="intercom" viewBox="0 0 48 48"><rect class="ill" x="9" y="7" width="26" height="19" rx="2"/><rect class="ill" x="13" y="11" width="13" height="9" rx="1"/><circle class="ill" cx="31" cy="12" r="1.4"/><rect class="ill" x="16" y="31" width="16" height="9" rx="1.5"/><circle class="ill" cx="24" cy="34.5" r="1.5"/><path class="ill" d="M20 38.5h8"/></symbol>
+  <symbol id="cam" viewBox="0 0 48 48"><path class="ill" d="M9 16h20l7 4v6l-7 4H13a4 4 0 0 1-4-4z"/><circle class="ill" cx="19" cy="23" r="4"/><path class="ill" d="M29 30l7 9"/><path class="ill" d="M9 39h10"/></symbol>
+  <symbol id="safe" viewBox="0 0 48 48"><rect class="ill" x="8" y="10" width="32" height="28" rx="3"/><circle class="ill" cx="21" cy="24" r="7"/><path class="ill" d="M21 24v-4.5M21 24l3.2 2.2"/><path class="ill" d="M33 20v8"/><path class="ill" d="M13 38v3M35 38v3"/></symbol>
+  <symbol id="closer" viewBox="0 0 48 48"><rect class="ill" x="7" y="27" width="20" height="7" rx="2"/><circle class="ill" cx="12" cy="30.5" r="1.4"/><path class="ill" d="M25 27 33 15l7 5"/><circle class="ill" cx="33" cy="15" r="1.6"/></symbol>
+  <symbol id="hinge" viewBox="0 0 48 48"><rect class="ill" x="13" y="8" width="9" height="32" rx="1.5"/><rect class="ill" x="26" y="8" width="9" height="32" rx="1.5"/><circle class="ill" cx="24" cy="15" r="2"/><circle class="ill" cx="24" cy="24" r="2"/><circle class="ill" cx="24" cy="33" r="2"/></symbol>
+  <symbol id="keymachine" viewBox="0 0 48 48"><rect class="ill" x="7" y="31" width="34" height="8" rx="2"/><circle class="ill" cx="15" cy="20" r="6.5"/><circle class="ill" cx="15" cy="20" r="1.6"/><path class="ill" d="M15 26.5V31"/><rect class="ill" x="25" y="17" width="13" height="7" rx="1.2"/><path class="ill" d="M23 20.5h2M31 24v7"/></symbol>
+  <symbol id="keyhole" viewBox="0 0 48 48"><circle class="ill" cx="24" cy="18" r="7.5"/><path class="ill" d="M20 24.5 17.5 39h13L28 24.5z"/></symbol>
+  <symbol id="shield" viewBox="0 0 48 48"><path class="ill" d="M24 6 10 12v9c0 8 6 14 14 17 8-3 14-9 14-17v-9z"/><path class="ill" d="M18 23l4.5 4.5L31 19"/></symbol>
+  <symbol id="wrench" viewBox="0 0 48 48"><path class="ill" d="M31 9a7.5 7.5 0 0 0-9.6 9.6L8 32l5 5 13.4-13.4A7.5 7.5 0 0 0 36 14l-4.2 4.2-3.8-3.8L32 10z"/></symbol>
+  <symbol id="flash" viewBox="0 0 48 48"><path class="ill" d="M26 6 12 27h10l-2 15 16-22H26z"/></symbol>
+  <symbol id="headset" viewBox="0 0 48 48"><path class="ill" d="M11 27a13 13 0 0 1 26 0"/><rect class="ill" x="7" y="26" width="7" height="12" rx="3"/><rect class="ill" x="34" y="26" width="7" height="12" rx="3"/><path class="ill" d="M37 38a7 7 0 0 1-7 5h-4"/></symbol>
+  <symbol id="pin" viewBox="0 0 48 48"><path class="ill" d="M24 6a12 12 0 0 0-12 12c0 9 12 24 12 24s12-15 12-24A12 12 0 0 0 24 6z"/><circle class="ill" cx="24" cy="18" r="4.4"/></symbol>
+  <symbol id="phone" viewBox="0 0 48 48"><path class="ill" d="M14 7h8l3.4 8.6-5 3.4a20 20 0 0 0 8.6 8.6l3.4-5L44 29v8a3 3 0 0 1-3 3A29 29 0 0 1 8 10a3 3 0 0 1 3-3z"/></symbol>
+  <symbol id="mail" viewBox="0 0 48 48"><rect class="ill" x="6" y="11" width="36" height="26" rx="3"/><path class="ill" d="M7 15l17 12 17-12"/></symbol>
+</defs></svg>
+
+<!-- ================= PAGE 1 · COUVERTURE ================= -->
+<section class="page cover">
+  <svg class="pat" viewBox="0 0 210 297" preserveAspectRatio="xMidYMid slice">
+    <g fill="none" stroke="#151319" stroke-width="1">
+      <g transform="translate(-10,60)"><use href="#keyhole" width="40" height="40"/></g>
+    </g>
+  </svg>
+  <div class="top"><div class="e">Serrurerie · Quincaillerie · Sécurité — Oran</div><div class="badge">Édition 2026</div></div>
+
+  <div class="draw"><svg viewBox="0 0 48 48"><g transform="scale(1)"><use href="#keyhole"/></g></svg></div>
+
+  <div class="hero">
+    <div class="la">LA</div>
+    <div class="mk">SER<b>RURE</b></div>
+    <div class="rule"></div>
+    <div class="claim">La solution à tout problème de serrure et de sécurité — vente &amp; service après-vente multi-marque.</div>
+    <div style="margin-top:10mm;display:flex;gap:9mm">
+      <div style="text-align:center"><svg style="width:16mm;height:16mm" viewBox="0 0 48 48"><use href="#key"/></svg><div style="font-family:var(--disp);font-size:10pt;letter-spacing:.1em;color:var(--ink);margin-top:1mm">CLÉ MINUTE</div></div>
+      <div style="text-align:center"><svg style="width:16mm;height:16mm" viewBox="0 0 48 48"><use href="#shield"/></svg><div style="font-family:var(--disp);font-size:10pt;letter-spacing:.1em;color:var(--ink);margin-top:1mm">SÉCURITÉ</div></div>
+      <div style="text-align:center"><svg style="width:16mm;height:16mm" viewBox="0 0 48 48"><use href="#wrench"/></svg><div style="font-family:var(--disp);font-size:10pt;letter-spacing:.1em;color:var(--ink);margin-top:1mm">POSE &amp; SAV</div></div>
+    </div>
+  </div>
+
+  <div class="frameShape s-arch photo s-round-shadow">
+    <img src="image_boutique/IMG_4817.jpg" alt="Boutique La Serrure">
+    <div class="cap">CATALOGUE</div>
+  </div>
+
+  <div class="bar">
+    <span><svg viewBox="0 0 48 48"><use href="#pin" class="ill white"/></svg>Bd des Lions, face mosquée Hasnaoui — Oran</span>
+    <span><svg viewBox="0 0 48 48"><use href="#phone" class="ill white"/></svg>0541 79 36 34</span>
+    <span><svg viewBox="0 0 48 48"><use href="#mail" class="ill white"/></svg>serruredelion@gmail.com</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 2 · TOUT POUR VOTRE PORTE ================= -->
+<section class="page">
+  <div class="content">
+    <div class="head">
+      <div><div class="kicker">01 · Produits</div><div class="h-title">Tout pour<br>votre <span class="red">porte</span>.</div></div>
+      <div class="wm"><svg viewBox="0 0 48 48"><use href="#keyhole" class="ill red"/></svg>LA <b>SERRURE</b></div>
+    </div>
+    <p class="lead">Du battant intérieur à la porte blindée : <b>serrures, cylindres, poignées et verrous</b>, toutes dimensions et toutes marques. Chaque référence est choisie pour sa fiabilité.</p>
+
+    <div class="tiles" style="margin-top:7mm">
+      <div class="tile"><span class="idx">A</span><div class="dr"><svg viewBox="0 0 48 48"><use href="#lock"/></svg></div><div><h4>Serrures encastrables</h4><p>À larder, à cylindre ou à gorge, simple ou multipoints (3 points). Toutes dimensions et entraxes.</p><div class="chips"><span class="chip">À cylindre</span><span class="chip">3 points</span><span class="chip">Haute sécurité</span></div></div></div>
+      <div class="tile"><span class="idx">B</span><div class="dr"><svg viewBox="0 0 48 48"><use href="#cyl"/></svg></div><div><h4>Cylindres &amp; canons</h4><p>Canons européens 60–100 mm et +, simple/double entrée, anti-crochetage. ISEO · SMTOP.</p><div class="chips"><span class="chip">Anti-perçage</span><span class="chip">Carte de propriété</span></div></div></div>
+      <div class="tile"><span class="idx">C</span><div class="dr"><svg viewBox="0 0 48 48"><use href="#handle"/></svg></div><div><h4>Poignées &amp; béquilles</h4><p>Béquilles sur plaque, poignées de tirage, rosaces. Finitions or, chrome, inox, noir mat.</p><div class="chips"><span class="chip">Or</span><span class="chip">Chrome</span><span class="chip">Noir mat</span></div></div></div>
+      <div class="tile"><span class="idx">D</span><div class="dr"><svg viewBox="0 0 48 48"><use href="#bolt2"/></svg></div><div><h4>Verrous &amp; serrures en applique</h4><p>Verrous de sûreté à bouton, serrures à poser, gâches — en renfort de fermeture.</p><div class="chips"><span class="chip">IZO · AHRAM</span><span class="chip">Appliqué</span></div></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:6mm;margin-top:7mm;height:82mm">
+      <div class="frameShape s-hex s-round-shadow" style="height:82mm"><img src="image_boutique/20241117_111845.jpg" alt="Vitrine de poignées"></div>
+      <div class="frameShape s-circle s-round-shadow" style="align-self:center;width:72mm;height:72mm;justify-self:center"><img src="image_boutique/IMG_4800.jpg" alt="Mur de serrures"></div>
+    </div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">02</span></div>
+</section>
+
+<!-- ================= PAGE 3 · VOIR · CONTRÔLER · PROTÉGER ================= -->
+<section class="page">
+  <div class="content">
+    <div class="head">
+      <div><div class="kicker">02 · Sécurité &amp; accès</div><div class="h-title">Voir. Contrôler.<br><span class="red">Protéger</span>.</div></div>
+      <div class="wm"><svg viewBox="0 0 48 48"><use href="#keyhole" class="ill red"/></svg>LA <b>SERRURE</b></div>
+    </div>
+    <p class="lead">Savoir qui entre et mettre vos biens à l'abri : <b>interphonie vidéo, contrôle d'accès, coffres-forts</b> et tout ce qui complète la fermeture.</p>
+
+    <div style="display:grid;grid-template-columns:1fr .82fr;gap:7mm;margin-top:7mm">
+      <div class="tiles" style="grid-template-columns:1fr">
+        <div class="tile"><div class="dr"><svg viewBox="0 0 48 48"><use href="#intercom"/></svg></div><div><h4>Interphonie vidéo</h4><p>Kits moniteur + platine de rue RIFFA, vision nocturne, ouverture de gâche à distance.</p></div></div>
+        <div class="tile"><div class="dr"><svg viewBox="0 0 48 48"><use href="#cam"/></svg></div><div><h4>Contrôle d'accès</h4><p>Serrures connectées, badges RFID, lecteurs code &amp; empreinte pour villas et immeubles.</p></div></div>
+        <div class="tile"><div class="dr"><svg viewBox="0 0 48 48"><use href="#safe"/></svg></div><div><h4>Coffres-forts</h4><p>À clé et à code, ancrage mural &amp; sol — pour documents, espèces et objets de valeur.</p></div></div>
+      </div>
+      <div class="frameShape s-diag s-round-shadow" style="height:118mm"><img src="image_boutique/IMG_4787.jpg" alt="Interphones vidéo RIFFA"></div>
+    </div>
+
+    <div class="iconstrip" style="margin-top:9mm">
+      <div class="ic-mini"><div class="b"><svg viewBox="0 0 48 48"><use href="#lock"/></svg></div><span>Cadenas</span></div>
+      <div class="ic-mini"><div class="b"><svg viewBox="0 0 48 48"><use href="#closer"/></svg></div><span>Ferme-portes</span></div>
+      <div class="ic-mini"><div class="b"><svg viewBox="0 0 48 48"><use href="#hinge"/></svg></div><span>Charnières</span></div>
+      <div class="ic-mini"><div class="b"><svg viewBox="0 0 48 48"><use href="#bolt2"/></svg></div><span>Targettes</span></div>
+      <div class="ic-mini"><div class="b"><svg viewBox="0 0 48 48"><use href="#shield"/></svg></div><span>Quincaillerie</span></div>
+    </div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">03</span></div>
+</section>
+
+<!-- ================= PAGE 4 · SERVICES + CLÉ MINUTE ================= -->
+<section class="page">
+  <div class="content">
+    <div class="head">
+      <div><div class="kicker">03 · Nos services</div><div class="h-title">Bien plus<br>qu'un <span class="red">magasin</span>.</div></div>
+      <div class="wm"><svg viewBox="0 0 48 48"><use href="#keyhole" class="ill red"/></svg>LA <b>SERRURE</b></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr .8fr;gap:7mm;margin-top:5mm">
+      <div class="serv" style="grid-template-columns:1fr 1fr">
+        <div class="srow"><div class="b"><svg viewBox="0 0 48 48"><use href="#wrench" class="ill gold"/></svg></div><div><h4>Installation &amp; pose</h4><p>Serrures, cylindres, interphonie et contrôle d'accès — posés dans les règles.</p></div></div>
+        <div class="srow"><div class="b"><svg viewBox="0 0 48 48"><use href="#flash" class="ill gold"/></svg></div><div><h4>Ouverture &amp; dépannage</h4><p>Porte claquée ou serrure bloquée : intervention rapide, sans dégâts.</p></div></div>
+        <div class="srow"><div class="b"><svg viewBox="0 0 48 48"><use href="#key" class="ill gold"/></svg></div><div><h4>Reproduction de clés</h4><p>Clé minute sur place — plates, à gorge, à points et sécurisées.</p></div></div>
+        <div class="srow"><div class="b"><svg viewBox="0 0 48 48"><use href="#shield" class="ill gold"/></svg></div><div><h4>Mise en sécurité</h4><p>Diagnostic et renforcement après effraction.</p></div></div>
+        <div class="srow" style="border-bottom:none"><div class="b"><svg viewBox="0 0 48 48"><use href="#headset" class="ill gold"/></svg></div><div><h4>SAV multi-marque</h4><p>Service &amp; pièces pour la plupart des grandes marques.</p></div></div>
+        <div class="srow" style="border-bottom:none"><div class="b"><svg viewBox="0 0 48 48"><use href="#keyhole" class="ill gold"/></svg></div><div><h4>Conseil expert</h4><p>Le juste niveau de sécurité, selon votre porte et budget.</p></div></div>
+      </div>
+      <div>
+        <div class="frameShape s-blob s-round-shadow" style="height:70mm"><img src="image_boutique/IMG-20241015-WA0029.jpg" alt="Mur de clés"></div>
+        <div style="text-align:center;margin-top:5mm">
+          <svg style="width:26mm;height:26mm" viewBox="0 0 48 48"><use href="#keymachine"/></svg>
+          <div style="font-family:var(--disp);font-size:20pt;color:var(--graphite);letter-spacing:.06em;margin-top:1mm">CLÉ MINUTE</div>
+          <div style="font-size:8pt;color:var(--grey);max-width:60mm;margin:1mm auto 0;line-height:1.4">Un double pendant que vous attendez, sur des centaines de profils en stock.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span>Serrurerie · Quincaillerie · Sécurité — Oran</span><span class="pg">04</span></div>
+</section>
+
+<!-- ================= PAGE 5 · MARQUES + CONTACT ================= -->
+<section class="page">
+  <div class="content">
+    <div class="head">
+      <div><div class="kicker">04 · Marques &amp; contact</div><div class="h-title">Les meilleures marques,<br>un seul <span class="red">point de vente</span>.</div></div>
+      <div class="wm"><svg viewBox="0 0 48 48"><use href="#keyhole" class="ill red"/></svg>LA <b>SERRURE</b></div>
+    </div>
+    <div class="brands">
+      <div class="bcell"><b>ISEO</b></div><div class="bcell"><b>RIFFA</b></div><div class="bcell"><b>SOFICLEF</b></div><div class="bcell"><b>ROBISAN</b></div>
+      <div class="bcell"><b>KALE</b></div><div class="bcell"><b>IZO</b></div><div class="bcell"><b>AHRAM</b></div><div class="bcell"><b>LINCE</b></div>
+      <div class="bcell"><b>SMTOP</b></div><div class="bcell"><b>CRAFTER</b></div><div class="bcell"><b>YALE</b></div><div class="bcell"><b>CISA</b></div>
+    </div>
+
+    <div class="contact">
+      <div class="t">Passez en <b>boutique</b>.</div>
+      <div style="font-family:var(--serif);font-style:italic;color:var(--gold2);font-size:11.5pt;margin-top:2mm">On s'occupe du reste.</div>
+      <div class="clist">
+        <div class="cl"><div class="b"><svg viewBox="0 0 48 48"><use href="#pin" class="ill gold"/></svg></div><div><span>Adresse</span><div class="v">Bd des Lions, face mosquée Hasnaoui — Oran</div></div></div>
+        <div class="cl"><div class="b"><svg viewBox="0 0 48 48"><use href="#phone" class="ill gold"/></svg></div><div><span>Téléphone</span><div class="v">0541 79 36 34</div></div></div>
+        <div class="cl"><div class="b"><svg viewBox="0 0 48 48"><use href="#mail" class="ill gold"/></svg></div><div><span>E-mail</span><div class="v">serruredelion@gmail.com</div></div></div>
+        <div class="cl"><div class="b"><svg viewBox="0 0 48 48"><use href="#keymachine" class="ill gold"/></svg></div><div><span>Sur place</span><div class="v">Clé minute · Conseil · SAV</div></div></div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:9mm">
+      <div class="wm" style="font-size:22pt"><svg viewBox="0 0 48 48"><use href="#keyhole" class="ill red"/></svg>LA <b>SERRURE</b></div>
+      <div style="font-family:var(--disp);font-size:16pt;letter-spacing:.24em;color:var(--gold)">MERCI</div>
+    </div>
+  </div>
+  <div class="ft"><span>© 2026 La Serrure · Oran</span><span class="pg">05</span></div>
+</section>
+
+<button class="dl-btn" onclick="window.print()">
+  <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v3h16v-3"/></svg>
+  Télécharger en PDF
+</button>
+
+<script>
+  // Repli propre si une photo est absente (utile en preview hébergée)
+  document.querySelectorAll('.frameShape img').forEach(function(i){
+    i.addEventListener('error',function(){
+      i.style.display='none';
+      i.parentNode.style.background='linear-gradient(135deg,#d8cfc0,#ada08b)';
+    });
+  });
+</script>
+
+</body>
+</html>
