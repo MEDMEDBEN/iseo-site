@@ -44,7 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initLenisGsap();
   initCinemaDoors();
   initGallery();
+  initHero3DIfCapable();
 });
+
+/* ---------- Gate the 3D hero key: skip on mobile / reduced motion / slow connections ---------- */
+function initHero3DIfCapable() {
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const slow = navigator.connection && (navigator.connection.saveData || /2g/.test(navigator.connection.effectiveType || ''));
+  if (reduced || slow || window.innerWidth < 900 || !window.THREE) return;
+  initHero3D();
+}
 
 /* ---------- Render data-driven sections ---------- */
 function renderDynamic() {
@@ -267,7 +276,7 @@ function initHero3D() {
   if (!canvas) return;
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(38, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
-  camera.position.set(0, 0, 9);
+  camera.position.set(0, 0, 10);
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
@@ -297,15 +306,16 @@ function initHero3D() {
   const toothGeo = new THREE.BoxGeometry(0.22, 0.42, 0.32);
   [2.1, 2.5, 2.9].forEach((x, i) => { const t = new THREE.Mesh(toothGeo, metal); t.position.set(x, -0.34 - i * 0.02, 0); group.add(t); });
   group.rotation.set(0.2, -0.3, 0.15);
-  group.scale.setScalar(1.0);
+  group.scale.setScalar(0.85);
+  group.position.set(2.6, 0.3, 0);
   scene.add(group);
 
-  // Floating particles
+  // Floating particles, biased toward the key's side of the frame
   const pGeo = new THREE.BufferGeometry();
-  const N = 90, pos = new Float32Array(N * 3);
-  for (let i = 0; i < N; i++) { pos[i*3]=(Math.random()-.5)*16; pos[i*3+1]=(Math.random()-.5)*10; pos[i*3+2]=(Math.random()-.5)*6; }
+  const N = 60, pos = new Float32Array(N * 3);
+  for (let i = 0; i < N; i++) { pos[i*3]=2.6+(Math.random()-.35)*9; pos[i*3+1]=(Math.random()-.5)*8; pos[i*3+2]=(Math.random()-.5)*5; }
   pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-  const particles = new THREE.Points(pGeo, new THREE.PointsMaterial({ color: 0xB01E28, size: 0.045, transparent: true, opacity: .5 }));
+  const particles = new THREE.Points(pGeo, new THREE.PointsMaterial({ color: 0xC6A15B, size: 0.04, transparent: true, opacity: .4 }));
   scene.add(particles);
 
   let mx = 0, my = 0;
