@@ -3,86 +3,213 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Produits — ISEO Sécurité</title>
-<meta name="description" content="Catalogue ISEO : cylindres & serrures, cadenas, coffres-forts, contrôle d'accès. Paiement à la livraison, installation certifiée." />
+<title>Produits — La Serrure, Oran</title>
+<meta name="description" content="Nos produits : serrures & verrous, poignées & béquilles, quincaillerie de porte, badges & contrôle d'accès, ventouses & serrures électriques, doubles de clés. Toutes marques, à Oran." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27%2317181B%27%3E%3Cpath d=%27M12 2 4 5.5v6c0 5 3.4 8.4 8 10.5 4.6-2.1 8-5.5 8-10.5v-6L12 2Z%27/%3E%3Cpath fill=%27%23B01E28%27 d=%27m10.2 12.6 1.6 1.6L15.4 10l1.3 1.3-4.9 4.9-3-3z%27/%3E%3C/svg%3E" />
-<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="theme.css" />
 </head>
 <body>
-<div class="cursor-dot"></div><div class="cursor-ring"></div>
 
-<header class="nav scrolled">
-  <a class="brand cursor-target" href="index.html"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z"/><path d="m9.5 12 1.8 1.8L15 10"/></svg></span>ISEO</a>
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a class="brand" href="index.html">
+    <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><path d="m11 11 9 9"/><path d="m16 16 2-2"/><path d="m19 19 2-2"/></svg></span>
+    <span class="wm"><b>LA SERRURE</b><span>Serrurerie · Oran</span></span>
+  </a>
   <nav class="nav-links">
-    <a href="index.html">Accueil</a><a href="produits.html">Produits</a>
-    <a href="index.html#services">Services</a><a href="experience.html">Notre histoire</a><a href="contact.html">Contact</a>
+    <a href="produits.html" class="active">Produits</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#galerie">En magasin</a>
+    <a href="contact.html">Contact</a>
   </nav>
-  <div class="nav-actions">
-    <a class="lang cursor-target" href="#">FR / ع</a>
-    <span class="magnetic"><a class="btn btn-primary cursor-target" href="contact.html"><span>Demander un devis</span></a></span>
-    <button class="burger cursor-target" aria-label="Menu"><svg viewBox="0 0 24 24" width="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <div class="nav-cta">
+    <a class="nav-phone" href="tel:+213541793634"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h5l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v5a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2Z"/></svg>0541 79 36 34</a>
+    <a class="btn btn-primary" href="contact.html"><span>Devis gratuit</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+    <button class="burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
 </header>
-<div class="drawer">
-  <a href="index.html">Accueil</a><a href="produits.html">Produits</a>
-  <a href="index.html#services">Services</a><a href="experience.html">Notre histoire</a><a href="contact.html">Contact</a>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" id="drawerClose" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <a href="produits.html">Produits</a>
+  <a href="services.html">Services</a>
+  <a href="index.html#galerie">En magasin</a>
+  <a href="contact.html">Contact</a>
+  <a class="btn btn-primary" href="tel:+213541793634"><span>Appeler 0541 79 36 34</span></a>
 </div>
 
-<section style="padding:140px 0 40px">
+<!-- HERO -->
+<section class="hero hero--sm">
+  <div class="hero__img"><img src="20241117_111507.jpg" alt="Vitrine de serrures — La Serrure Oran" fetchpriority="high"></div>
+  <div class="hero__scrim"></div>
   <div class="container">
-    <span class="kicker reveal in">Catalogue</span>
-    <h1 class="display reveal in" style="font-size:clamp(2.4rem,6vw,4.6rem);margin:16px 0 18px">Nos produits<br>de sécurité.</h1>
-    <p class="lead reveal in">Chaque référence est testée par nos serruriers. Paiement à la livraison, 58 wilayas, installation possible par nos équipes certifiées.</p>
-  </div>
-</section>
-
-<section style="padding:20px 0 120px">
-  <div class="container">
-    <div class="filters" id="filters">
-      <button class="chip active cursor-target" data-f="all">Tous</button>
-      <button class="chip cursor-target" data-f="cyl">Cylindres &amp; serrures</button>
-      <button class="chip cursor-target" data-f="pad">Cadenas</button>
-      <button class="chip cursor-target" data-f="safe">Coffres-forts</button>
-      <button class="chip cursor-target" data-f="access">Contrôle d’accès</button>
+    <div class="hero__inner">
+      <div class="crumb"><a href="index.html">Accueil</a> <span>/</span> Produits</div>
+      <span class="eyebrow" style="margin-top:10px">Notre catalogue</span>
+      <h1>Tout ce qu'il faut<br>pour <span class="accent">votre porte.</span></h1>
+      <p>Des centaines de références en stock, toutes marques — serrures, poignées, contrôle d'accès et clés. Voici nos grandes familles de produits.</p>
     </div>
-    <div class="prod-grid" id="prod-grid" data-stagger></div>
   </div>
 </section>
 
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee__t">
+    <span>ISEO</span><i>•</i><span>RIFFA</span><i>•</i><span>ROBISAN</span><i>•</i><span>KALE</span><i>•</i><span>YALE</span><i>•</i><span>CISA</span><i>•</i><span>SOFICLEF</span><i>•</i><span>LINCE</span><i>•</i><span>IZO</span><i>•</i><span>AHRAM</span><i>•</i><span>CRAFTER</span><i>•</i><span>SMTOP</span><i>•</i>
+    <span>ISEO</span><i>•</i><span>RIFFA</span><i>•</i><span>ROBISAN</span><i>•</i><span>KALE</span><i>•</i><span>YALE</span><i>•</i><span>CISA</span><i>•</i><span>SOFICLEF</span><i>•</i><span>LINCE</span><i>•</i><span>IZO</span><i>•</i><span>AHRAM</span><i>•</i><span>CRAFTER</span><i>•</i><span>SMTOP</span><i>•</i>
+  </div>
+</div>
+
+<!-- PRODUITS -->
+<section style="padding:var(--pad) 0">
+  <div class="container">
+
+    <div id="serrures" class="split" data-reveal style="margin-bottom:clamp(56px,8vw,100px)">
+      <div class="split__media"><img src="20241117_111840.jpg" alt="Serrures et verrous" loading="lazy"></div>
+      <div class="split__text">
+        <span class="eyebrow">Sécurité de porte</span>
+        <h2 style="margin-top:12px">Serrures &amp; verrous</h2>
+        <p class="lead">Le cœur du métier : la bonne serrure pour chaque porte, avec le niveau de sécurité qu'il vous faut.</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Serrures à encastrer &amp; en applique</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Cylindres &amp; barillets, verrous de sûreté</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Serrures à tirette &amp; multipoints</span></li>
+        </ul>
+        <div class="chips"><span class="chip">ISEO</span><span class="chip">KALE</span><span class="chip">YALE</span><span class="chip">CISA</span><span class="chip">SOFICLEF</span><span class="chip">LINCE</span></div>
+      </div>
+    </div>
+
+    <div id="poignees" class="split alt" data-reveal style="margin-bottom:clamp(56px,8vw,100px)">
+      <div class="split__text">
+        <span class="eyebrow">Quincaillerie</span>
+        <h2 style="margin-top:12px">Poignées &amp; béquilles</h2>
+        <p class="lead">Une vitrine entière de poignées pour habiller vos portes, du classique laiton au noir mat contemporain.</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Béquilles double, plaques &amp; rosaces</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Finitions laiton, inox, chromé, noir mat</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Poignées de tirage &amp; boutons</span></li>
+        </ul>
+        <div class="chips"><span class="chip">Laiton</span><span class="chip">Inox</span><span class="chip">Noir mat</span><span class="chip">Design</span></div>
+      </div>
+      <div class="split__media"><img src="20241117_111845.jpg" alt="Poignées en laiton" loading="lazy"></div>
+    </div>
+
+    <div id="quincaillerie" class="split" data-reveal style="margin-bottom:clamp(56px,8vw,100px)">
+      <div class="split__media"><img src="20241117_111401.jpg" alt="Quincaillerie de porte" loading="lazy"></div>
+      <div class="split__text">
+        <span class="eyebrow">Accessoires</span>
+        <h2 style="margin-top:12px">Quincaillerie de porte</h2>
+        <p class="lead">Tous les petits éléments qui font la différence — pour réparer, améliorer ou finir une pose proprement.</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Crémones, barres &amp; targettes</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Paumelles, charnières &amp; butoirs</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Entrées de clé, cache-cylindres &amp; accessoires</span></li>
+        </ul>
+        <div class="chips"><span class="chip">Cadenas</span><span class="chip">Charnières</span><span class="chip">Targettes</span><span class="chip">Butoirs</span></div>
+      </div>
+    </div>
+
+    <div id="acces" class="split alt" data-reveal style="margin-bottom:clamp(56px,8vw,100px)">
+      <div class="split__text">
+        <span class="eyebrow">Contrôle d'accès</span>
+        <h2 style="margin-top:12px">Badges &amp; télécommandes</h2>
+        <p class="lead">Interphonie, badges et télécommandes pour contrôler qui entre — chez les particuliers comme dans les immeubles.</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Badges &amp; porte-clés RFID (copie sur place)</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Interphones &amp; portiers vidéo</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Télécommandes de portail &amp; garage</span></li>
+        </ul>
+        <div class="chips"><span class="chip">RIFFA</span><span class="chip">ROBISAN</span><span class="chip">RFID</span><span class="chip">Vidéo</span></div>
+      </div>
+      <div class="split__media"><img src="20241117_111711.jpg" alt="Badges et porte-clés RFID" loading="lazy"></div>
+    </div>
+
+    <div id="electrique" class="split" data-reveal style="margin-bottom:clamp(56px,8vw,100px)">
+      <div class="split__media"><img src="20241117_111822.jpg" alt="Ventouses magnétiques" loading="lazy"></div>
+      <div class="split__text">
+        <span class="eyebrow">Ouverture à distance</span>
+        <h2 style="margin-top:12px">Ventouses &amp; serrures électriques</h2>
+        <p class="lead">Pour ouvrir à distance et sécuriser les accès collectifs : la solution électrique adaptée à votre porte.</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Ventouses magnétiques (maglocks)</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Gâches &amp; serrures électriques</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Boutons poussoirs &amp; accessoires</span></li>
+        </ul>
+        <div class="chips"><span class="chip">SOFICLEF</span><span class="chip">ROBISAN</span><span class="chip">KALE</span><span class="chip">IZO</span></div>
+      </div>
+    </div>
+
+    <div id="cles" class="split alt" data-reveal>
+      <div class="split__text">
+        <span class="eyebrow">Clé Minute</span>
+        <h2 style="margin-top:12px">Doubles de clés</h2>
+        <p class="lead">Notre atelier reproduit vos clés pendant que vous patientez — précision garantie, essai immédiat.</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Clés plates, à points &amp; à gorges</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Clés de voiture &amp; télécommandes</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Clés de sûreté sur présentation de carte</span></li>
+        </ul>
+        <a class="btn btn-primary" href="contact.html"><span>Passer au magasin</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+      <div class="split__media"><img src="IMG-20241015-WA0029.jpg" alt="Mur de clés à reproduire" loading="lazy"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:0 0 var(--pad)">
+  <div class="container">
+    <div class="cta" data-reveal>
+      <span class="eyebrow">Un besoin précis ?</span>
+      <h2>On a sûrement ce qu'il vous faut.</h2>
+      <p>Décrivez-nous votre porte ou votre projet : on vous conseille la bonne solution, au bon prix.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="tel:+213541793634"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h5l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v5a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2Z"/></svg><span>0541 79 36 34</span></a>
+        <a class="btn btn-glass" href="contact.html"><span>Nous écrire</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <div class="footer__bottom" style="border:0;padding-top:0">
-      <a class="brand" href="index.html"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z"/></svg></span>ISEO</a>
-      <span>© <span id="year"></span> ISEO. Tous droits réservés.</span>
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><path d="m11 11 9 9"/><path d="m16 16 2-2"/></svg></span><span class="wm"><b>LA SERRURE</b><span>Serrurerie · Oran</span></span></a>
+        <p class="desc">Serrurerie multi-marque à Oran. Vente, installation, dépannage, SAV et Clé Minute — pour votre tranquillité au quotidien.</p>
+      </div>
+      <div><h5>Produits</h5><ul>
+        <li><a href="produits.html#serrures">Serrures &amp; verrous</a></li>
+        <li><a href="produits.html#poignees">Poignées &amp; béquilles</a></li>
+        <li><a href="produits.html#acces">Badges &amp; accès</a></li>
+        <li><a href="produits.html#cles">Doubles de clés</a></li>
+      </ul></div>
+      <div><h5>Services</h5><ul>
+        <li><a href="services.html">Installation &amp; pose</a></li>
+        <li><a href="services.html">Dépannage</a></li>
+        <li><a href="services.html">Clé Minute</a></li>
+        <li><a href="services.html">Blindage de porte</a></li>
+      </ul></div>
+      <div><h5>Contact</h5><ul>
+        <li><a href="tel:+213541793634">0541 79 36 34</a></li>
+        <li><a href="mailto:serruredelion@gmail.com">serruredelion@gmail.com</a></li>
+        <li><a href="https://www.google.com/maps?q=Boulevard+des+Lions+Oran" target="_blank" rel="noopener">Bd des Lions, Oran</a></li>
+        <li>Samedi – Jeudi · 9h – 18h</li>
+      </ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> La Serrure — Oran. Tous droits réservés.</span>
+      <span>Serrurerie multi-marque · Clé Minute · SAV</span>
     </div>
   </div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-<script src="products.js"></script>
-<script src="main.js"></script>
+<script src="app.js"></script>
 <script src="chat.js"></script>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  // Filtering
-  const filters = document.getElementById('filters');
-  filters.addEventListener('click', e => {
-    const b = e.target.closest('.chip'); if (!b) return;
-    filters.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-    b.classList.add('active');
-    const f = b.dataset.f;
-    document.querySelectorAll('#prod-grid .pcard').forEach(card => {
-      const show = f === 'all' || card.dataset.cat === f;
-      card.style.display = show ? '' : 'none';
-    });
-  });
-  // deep-link filter (#cyl etc.)
-  const hash = location.hash.replace('#','');
-  if (hash) { const b = filters.querySelector(`[data-f="${hash}"]`); if (b) b.click(); }
-</script>
 </body>
 </html>
